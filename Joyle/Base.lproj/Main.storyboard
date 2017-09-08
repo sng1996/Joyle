@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q1I-67-bSR">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today-->
+        <scene sceneID="5Ef-FS-pTh">
+            <objects>
+                <viewController id="IbX-ql-Gvl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nBf-Cg-LnC"/>
+                        <viewControllerLayoutGuide type="bottom" id="hZG-4S-Q9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4hW-gx-Mai">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Today" id="oLz-XT-yQc">
+                        <barButtonItem key="rightBarButtonItem" title="Tasks" id="Ycq-0U-IFa">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="VYm-Gl-8Wp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QeJ-cp-KTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="22w-km-anD">
+            <objects>
+                <navigationController id="q1I-67-bSR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QYO-rY-Amo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IbX-ql-Gvl" kind="relationship" relationship="rootViewController" id="LlT-dT-Cqq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EuP-K9-IlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1029" y="115"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Joyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l7i-pe-Uf4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <inset key="scrollIndicatorInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="FwN-yy-Lmk">
+                                    <size key="itemSize" width="310" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Bnr-Ln-ANM" customClass="TaskCell" customModule="Joyle" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="0.0" width="310" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly7-C1-z7C">
+                                                    <rect key="frame" x="20" y="12" width="275" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-K5-liG">
+                                                    <rect key="frame" x="274" y="8" width="34" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <connections>
+                                            <outlet property="label" destination="Ly7-C1-z7C" id="CaL-MW-Lge"/>
+                                            <outlet property="labelStatus" destination="EEY-K5-liG" id="kQO-Wz-J14"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addTaskCell" id="aYj-1Z-uhH" customClass="AddTaskCell" customModule="Joyle" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="53" width="310" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Добавить задачу..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6AM-U6-5Ie">
+                                                    <rect key="frame" x="20" y="10" width="256" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="Pi7-8n-Xft"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="textField" destination="6AM-U6-5Ie" id="OBR-U0-AvQ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mB4-t2-J3C"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iby-b5-4hQ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tasks" id="ocu-b8-IOJ">
+                        <barButtonItem key="rightBarButtonItem" title="Готово" id="rBH-vb-RYJ">
+                            <connections>
+                                <action selector="pressOkButton" destination="BYZ-38-t0r" id="bhm-58-iuN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cV" destination="l7i-pe-Uf4" id="iky-DU-JZf"/>
+                        <outlet property="ok" destination="rBH-vb-RYJ" id="JZI-QP-sa5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="114.08450704225352"/>
+        </scene>
+    </scenes>
+</document>

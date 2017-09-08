@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */; };
+		2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C81F5FEE1E00D9B16A /* ViewController.swift */; };
+		2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */; };
+		2AA598CE1F5FEE1E00D9B16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */; };
+		2AA598D11F5FEE1E00D9B16A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598CF1F5FEE1E00D9B16A /* LaunchScreen.storyboard */; };
+		2AA598DC1F5FEE1E00D9B16A /* JoyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598DB1F5FEE1E00D9B16A /* JoyleTests.swift */; };
+		2AA598E71F5FEE1E00D9B16A /* JoyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598E61F5FEE1E00D9B16A /* JoyleUITests.swift */; };
+		2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */; };
+		2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F61F5FF06A00D9B16A /* Task.swift */; };
+		2AA598F91F618B0500D9B16A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F81F618B0500D9B16A /* Section.swift */; };
+		2AA598FB1F61C78500D9B16A /* AddTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598FA1F61C78500D9B16A /* AddTaskCell.swift */; };
+		AC19DB6DE3AC33CEF72F09E2 /* Pods_Joyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AA598D81F5FEE1E00D9B16A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AA598BB1F5FEE1E00D9B16A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AA598C21F5FEE1E00D9B16A;
+			remoteInfo = Joyle;
+		};
+		2AA598E31F5FEE1E00D9B16A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AA598BB1F5FEE1E00D9B16A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AA598C21F5FEE1E00D9B16A;
+			remoteInfo = Joyle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2AA598C31F5FEE1E00D9B16A /* Joyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2AA598C81F5FEE1E00D9B16A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AA598CB1F5FEE1E00D9B16A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AA598D01F5FEE1E00D9B16A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2AA598D21F5FEE1E00D9B16A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AA598D71F5FEE1E00D9B16A /* JoyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA598DB1F5FEE1E00D9B16A /* JoyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoyleTests.swift; sourceTree = "<group>"; };
+		2AA598DD1F5FEE1E00D9B16A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AA598E21F5FEE1E00D9B16A /* JoyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA598E61F5FEE1E00D9B16A /* JoyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoyleUITests.swift; sourceTree = "<group>"; };
+		2AA598E81F5FEE1E00D9B16A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		2AA598F61F5FF06A00D9B16A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2AA598F81F618B0500D9B16A /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		2AA598FA1F61C78500D9B16A /* AddTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCell.swift; sourceTree = "<group>"; };
+		745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88A2A04B71AEA9B38B2E5B3F /* Pods-Joyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Joyle/Pods-Joyle.release.xcconfig"; sourceTree = "<group>"; };
+		AF313C7040F0B439EC5560A4 /* Pods-Joyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Joyle/Pods-Joyle.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AA598C01F5FEE1E00D9B16A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC19DB6DE3AC33CEF72F09E2 /* Pods_Joyle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA598D41F5FEE1E00D9B16A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA598DF1F5FEE1E00D9B16A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AA598BA1F5FEE1E00D9B16A = {
+			isa = PBXGroup;
+			children = (
+				2AA598C51F5FEE1E00D9B16A /* Joyle */,
+				2AA598DA1F5FEE1E00D9B16A /* JoyleTests */,
+				2AA598E51F5FEE1E00D9B16A /* JoyleUITests */,
+				2AA598C41F5FEE1E00D9B16A /* Products */,
+				88646814DCFE70B5EEF6D66A /* Pods */,
+				781FA04918D4BCA64C846B0C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2AA598C41F5FEE1E00D9B16A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AA598C31F5FEE1E00D9B16A /* Joyle.app */,
+				2AA598D71F5FEE1E00D9B16A /* JoyleTests.xctest */,
+				2AA598E21F5FEE1E00D9B16A /* JoyleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AA598C51F5FEE1E00D9B16A /* Joyle */ = {
+			isa = PBXGroup;
+			children = (
+				2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */,
+				2AA598C81F5FEE1E00D9B16A /* ViewController.swift */,
+				2AA598F61F5FF06A00D9B16A /* Task.swift */,
+				2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */,
+				2AA598FA1F61C78500D9B16A /* AddTaskCell.swift */,
+				2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */,
+				2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */,
+				2AA598CF1F5FEE1E00D9B16A /* LaunchScreen.storyboard */,
+				2AA598D21F5FEE1E00D9B16A /* Info.plist */,
+				2AA598F81F618B0500D9B16A /* Section.swift */,
+			);
+			path = Joyle;
+			sourceTree = "<group>";
+		};
+		2AA598DA1F5FEE1E00D9B16A /* JoyleTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AA598DB1F5FEE1E00D9B16A /* JoyleTests.swift */,
+				2AA598DD1F5FEE1E00D9B16A /* Info.plist */,
+			);
+			path = JoyleTests;
+			sourceTree = "<group>";
+		};
+		2AA598E51F5FEE1E00D9B16A /* JoyleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2AA598E61F5FEE1E00D9B16A /* JoyleUITests.swift */,
+				2AA598E81F5FEE1E00D9B16A /* Info.plist */,
+			);
+			path = JoyleUITests;
+			sourceTree = "<group>";
+		};
+		781FA04918D4BCA64C846B0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88646814DCFE70B5EEF6D66A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF313C7040F0B439EC5560A4 /* Pods-Joyle.debug.xcconfig */,
+				88A2A04B71AEA9B38B2E5B3F /* Pods-Joyle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AA598C21F5FEE1E00D9B16A /* Joyle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AA598EB1F5FEE1E00D9B16A /* Build configuration list for PBXNativeTarget "Joyle" */;
+			buildPhases = (
+				A1767F1323E80298899B6618 /* [CP] Check Pods Manifest.lock */,
+				2AA598BF1F5FEE1E00D9B16A /* Sources */,
+				2AA598C01F5FEE1E00D9B16A /* Frameworks */,
+				2AA598C11F5FEE1E00D9B16A /* Resources */,
+				33A332530694ADAA776446A8 /* [CP] Embed Pods Frameworks */,
+				E8F132E0AB53EBD042FC6760 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Joyle;
+			productName = Joyle;
+			productReference = 2AA598C31F5FEE1E00D9B16A /* Joyle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2AA598D61F5FEE1E00D9B16A /* JoyleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AA598EE1F5FEE1E00D9B16A /* Build configuration list for PBXNativeTarget "JoyleTests" */;
+			buildPhases = (
+				2AA598D31F5FEE1E00D9B16A /* Sources */,
+				2AA598D41F5FEE1E00D9B16A /* Frameworks */,
+				2AA598D51F5FEE1E00D9B16A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AA598D91F5FEE1E00D9B16A /* PBXTargetDependency */,
+			);
+			name = JoyleTests;
+			productName = JoyleTests;
+			productReference = 2AA598D71F5FEE1E00D9B16A /* JoyleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2AA598E11F5FEE1E00D9B16A /* JoyleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AA598F11F5FEE1E00D9B16A /* Build configuration list for PBXNativeTarget "JoyleUITests" */;
+			buildPhases = (
+				2AA598DE1F5FEE1E00D9B16A /* Sources */,
+				2AA598DF1F5FEE1E00D9B16A /* Frameworks */,
+				2AA598E01F5FEE1E00D9B16A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AA598E41F5FEE1E00D9B16A /* PBXTargetDependency */,
+			);
+			name = JoyleUITests;
+			productName = JoyleUITests;
+			productReference = 2AA598E21F5FEE1E00D9B16A /* JoyleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AA598BB1F5FEE1E00D9B16A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Сергей Гаврилко";
+				TargetAttributes = {
+					2AA598C21F5FEE1E00D9B16A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = JX92L3X2VU;
+						ProvisioningStyle = Automatic;
+					};
+					2AA598D61F5FEE1E00D9B16A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = JX92L3X2VU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2AA598C21F5FEE1E00D9B16A;
+					};
+					2AA598E11F5FEE1E00D9B16A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = JX92L3X2VU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2AA598C21F5FEE1E00D9B16A;
+					};
+				};
+			};
+			buildConfigurationList = 2AA598BE1F5FEE1E00D9B16A /* Build configuration list for PBXProject "Joyle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AA598BA1F5FEE1E00D9B16A;
+			productRefGroup = 2AA598C41F5FEE1E00D9B16A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AA598C21F5FEE1E00D9B16A /* Joyle */,
+				2AA598D61F5FEE1E00D9B16A /* JoyleTests */,
+				2AA598E11F5FEE1E00D9B16A /* JoyleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AA598C11F5FEE1E00D9B16A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA598D11F5FEE1E00D9B16A /* LaunchScreen.storyboard in Resources */,
+				2AA598CE1F5FEE1E00D9B16A /* Assets.xcassets in Resources */,
+				2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA598D51F5FEE1E00D9B16A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA598E01F5FEE1E00D9B16A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33A332530694ADAA776446A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Joyle/Pods-Joyle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1767F1323E80298899B6618 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8F132E0AB53EBD042FC6760 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Joyle/Pods-Joyle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AA598BF1F5FEE1E00D9B16A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA598F91F618B0500D9B16A /* Section.swift in Sources */,
+				2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */,
+				2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */,
+				2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */,
+				2AA598FB1F61C78500D9B16A /* AddTaskCell.swift in Sources */,
+				2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA598D31F5FEE1E00D9B16A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA598DC1F5FEE1E00D9B16A /* JoyleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA598DE1F5FEE1E00D9B16A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA598E71F5FEE1E00D9B16A /* JoyleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AA598D91F5FEE1E00D9B16A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AA598C21F5FEE1E00D9B16A /* Joyle */;
+			targetProxy = 2AA598D81F5FEE1E00D9B16A /* PBXContainerItemProxy */;
+		};
+		2AA598E41F5FEE1E00D9B16A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AA598C21F5FEE1E00D9B16A /* Joyle */;
+			targetProxy = 2AA598E31F5FEE1E00D9B16A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AA598CB1F5FEE1E00D9B16A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2AA598CF1F5FEE1E00D9B16A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AA598D01F5FEE1E00D9B16A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AA598E91F5FEE1E00D9B16A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AA598EA1F5FEE1E00D9B16A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AA598EC1F5FEE1E00D9B16A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF313C7040F0B439EC5560A4 /* Pods-Joyle.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JX92L3X2VU;
+				INFOPLIST_FILE = Joyle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavrilko.Joyle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2AA598ED1F5FEE1E00D9B16A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88A2A04B71AEA9B38B2E5B3F /* Pods-Joyle.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JX92L3X2VU;
+				INFOPLIST_FILE = Joyle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavrilko.Joyle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2AA598EF1F5FEE1E00D9B16A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JX92L3X2VU;
+				INFOPLIST_FILE = JoyleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavrilko.JoyleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Joyle.app/Joyle";
+			};
+			name = Debug;
+		};
+		2AA598F01F5FEE1E00D9B16A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JX92L3X2VU;
+				INFOPLIST_FILE = JoyleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavrilko.JoyleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Joyle.app/Joyle";
+			};
+			name = Release;
+		};
+		2AA598F21F5FEE1E00D9B16A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = JX92L3X2VU;
+				INFOPLIST_FILE = JoyleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavrilko.JoyleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Joyle;
+			};
+			name = Debug;
+		};
+		2AA598F31F5FEE1E00D9B16A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = JX92L3X2VU;
+				INFOPLIST_FILE = JoyleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavrilko.JoyleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Joyle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AA598BE1F5FEE1E00D9B16A /* Build configuration list for PBXProject "Joyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA598E91F5FEE1E00D9B16A /* Debug */,
+				2AA598EA1F5FEE1E00D9B16A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AA598EB1F5FEE1E00D9B16A /* Build configuration list for PBXNativeTarget "Joyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA598EC1F5FEE1E00D9B16A /* Debug */,
+				2AA598ED1F5FEE1E00D9B16A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AA598EE1F5FEE1E00D9B16A /* Build configuration list for PBXNativeTarget "JoyleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA598EF1F5FEE1E00D9B16A /* Debug */,
+				2AA598F01F5FEE1E00D9B16A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AA598F11F5FEE1E00D9B16A /* Build configuration list for PBXNativeTarget "JoyleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA598F21F5FEE1E00D9B16A /* Debug */,
+				2AA598F31F5FEE1E00D9B16A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AA598BB1F5FEE1E00D9B16A /* Project object */;
+}

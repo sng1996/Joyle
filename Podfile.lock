@@ -1,0 +1,21 @@
+PODS:
+  - CADRACSwippableCell (0.0.1):
+    - ReactiveCocoa (~> 2.2)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - CADRACSwippableCell
+
+SPEC CHECKSUMS:
+  CADRACSwippableCell: 6935d451b910bcc035cbb465e4362640dc22670e
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+
+PODFILE CHECKSUM: 40dfc6e8160c0fce9ce9a3c830f4899a822ba012
+
+COCOAPODS: 1.2.0
