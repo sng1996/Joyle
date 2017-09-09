@@ -10,7 +10,7 @@ import UIKit
 
 class Section: NSObject {
     
-    var tasks: [Task] = []
+    var tasks: [Task]!
     var level: Int = 0
     
     override init(){}

@@ -12,7 +12,10 @@ class Task: NSObject {
     
     var name: String!
     var subtasks: [Task] = []
+    var parent: Task!
     var isOpen: Bool = false
+    var isFinish: Bool = false
+    var date: String = ""
     
     init(name: String){
         self.name = name
