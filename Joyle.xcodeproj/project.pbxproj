@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A415A901F6569520017DF85 /* TmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A415A8F1F6569520017DF85 /* TmpViewController.swift */; };
 		2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */; };
 		2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C81F5FEE1E00D9B16A /* ViewController.swift */; };
 		2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A415A8F1F6569520017DF85 /* TmpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpViewController.swift; sourceTree = "<group>"; };
 		2AA598C31F5FEE1E00D9B16A /* Joyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AA598C81F5FEE1E00D9B16A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		2AA598BA1F5FEE1E00D9B16A = {
 			isa = PBXGroup;
 			children = (
+				2A415A8F1F6569520017DF85 /* TmpViewController.swift */,
 				2AA598C51F5FEE1E00D9B16A /* Joyle */,
 				2AA598DA1F5FEE1E00D9B16A /* JoyleTests */,
 				2AA598E51F5FEE1E00D9B16A /* JoyleUITests */,
@@ -351,6 +354,7 @@
 			files = (
 				2AA598F91F618B0500D9B16A /* Section.swift in Sources */,
 				2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */,
+				2A415A901F6569520017DF85 /* TmpViewController.swift in Sources */,
 				2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */,
 				2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */,
 				2AA598FB1F61C78500D9B16A /* AddTaskCell.swift in Sources */,

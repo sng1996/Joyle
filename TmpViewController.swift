@@ -1,4 +1,4 @@
-//
+/*//
 //  ViewController.swift
 //  Joyle
 //
@@ -19,26 +19,41 @@ class ViewController: UIViewController {
     @IBOutlet var cV: UICollectionView!
     @IBOutlet var ok: UIBarButtonItem!
     @IBOutlet var datePicker: UIDatePicker!
+    /*var sections: [Section] = []
+     var tmpSection: Section!
+     var currentElementIndex: Int = 0
+     var tmpTask: Task!
+     var isCopyTime: Bool = false
+     var isSetDate: Bool = false
+     var tmpTasks: [Task] = []
+     var finishedTasks: [Task] = []
+     var beginIndexPath: IndexPath!*/
     
-    var cvTasks: [Task] = []
-    var finishedTasks: [Task] = []
-    var tmpTask: Task!
-    var isCopyTime: Bool = false
-    var isSetDate: Bool = false
-
+    var tasksArr: [Task] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*let section = Section()
+         sections.append(section)
+         let tmpT: [Task] = []
+         sections[0].tasks = tmpT
+         
+         for i in 0...10{
+         let task = Task(name: "Task " + String(i))
+         sections[0].tasks.append(task)
+         }*/
+        
         for i in 0...10{
             let task = Task(name: "Task " + String(i))
-            cvTasks.append(task)
+            tasksArr.append(task)
         }
         
-        ok.title = ""
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongGesture(_:)))
         cV.addGestureRecognizer(longPressGesture)
-
+        
+        //ok.title = ""
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -48,12 +63,12 @@ class ViewController: UIViewController {
         datePicker.backgroundColor = UIColor.white
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     func handleLongGesture(_ gesture: UILongPressGestureRecognizer) {
         
@@ -68,12 +83,26 @@ class ViewController: UIViewController {
             
             cV.beginInteractiveMovementForItem(at: selectedIndexPath)
             
+            /*if (!sections[selectedIndexPath.section].tasks[selectedIndexPath.row].isOpen){
+             cV.beginInteractiveMovementForItem(at: selectedIndexPath)
+             }*/
+            
         case UIGestureRecognizerState.changed:
             
             cV.updateInteractiveMovementTargetPosition(gesture.location(in: cV))
             
         case UIGestureRecognizerState.ended:
             
+            /*guard let destIndexPath = cV.indexPathForItem(at: gesture.location(in: cV)) else {
+             break
+             }
+             if(sections[destIndexPath.section].tasks[destIndexPath.row].isOpen){
+             cV.cancelInteractiveMovement()
+             }
+             
+             if (destIndexPath.section != beginIndexPath.section){
+             cV.cancelInteractiveMovement()
+             }*/
             cV.endInteractiveMovement()
             cV.reloadData()
             
@@ -94,8 +123,8 @@ class ViewController: UIViewController {
         return indexPaths
         
     }
-
-
+    
+    
 }
 
 
@@ -110,11 +139,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        //return sections.count;
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cvTasks.count
+        //return sections[section].tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -123,7 +153,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TaskCell
         
-        if (indexPath.row == 0){
+        if (indexPath.section == 0 && indexPath.row == 0){
             
             let customView = UIView(frame: CGRect(x:0,y:0,width:320,height:40))
             var btn = UIButton(frame: CGRect(x:205,y:5,width:100,height:30))
@@ -138,34 +168,31 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             
         }
         
-        cell.label.text = cvTasks[indexPath.row].name
-        cell.labelDate.text = cvTasks[indexPath.row].date
+        cell.label.text = sections[indexPath.section].tasks[indexPath.row].name
+        cell.labelDate.text = sections[indexPath.section].tasks[indexPath.row].date
         cell.labelStatus.text = ""
         
-        switch(cvTasks[indexPath.row].level){
+        switch(sections[indexPath.section].level){
             
-            case 0:
-                cell.labelStatus.textColor = UIColor.black
-                break
-            case 1:
-                cell.labelStatus.textColor = UIColor.red
-                break
-            case 2:
-                cell.labelStatus.textColor = UIColor.blue
-                break
-            case 3:
-                cell.labelStatus.textColor = UIColor.green
-                break
-            default: break
+        case 0:
+            cell.labelStatus.textColor = UIColor.black
+            break
+        case 1:
+            cell.labelStatus.textColor = UIColor.red
+            break
+        case 2:
+            cell.labelStatus.textColor = UIColor.blue
+            break
+        default: break
             
         }
         
-        if (cvTasks[indexPath.row].level > 0){
+        if (sections[indexPath.section].level > 0){
             cell.labelStatus.text = "•"
         }
         
-        if (cvTasks[indexPath.row].subtasks.count > 0){
-            if(cvTasks[indexPath.row].isOpen){
+        if (sections[indexPath.section].tasks[indexPath.row].subtasks.count > 0){
+            if(sections[indexPath.section].tasks[indexPath.row].isOpen){
                 cell.labelStatus.text = "v"
             }
             else{
@@ -173,52 +200,43 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             }
         }
         
+        
         cell.setNeedsLayout()
         
         return cell
         
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
-        let taskTmp = cvTasks[destinationIndexPath.row]
-        
-        ///////////////Закрытие пустой задачи
-        
-        if (cvTasks[sourceIndexPath.row].level > 0 && cvTasks[sourceIndexPath.row].parent.subtasks.count == 1 && cvTasks[sourceIndexPath.row-1].parent.isOpen){
-            cvTasks[sourceIndexPath.row-1].parent.isOpen = false
-        }
-        
-        ///////////////Удаление из основного массива
-        
-        if (cvTasks[sourceIndexPath.row].level > 0){
+        if (sections[sourceIndexPath.section].level > 0){
             
-            let indexOfA = cvTasks[sourceIndexPath.row].parent.subtasks.index(of: cvTasks[sourceIndexPath.row])
-            cvTasks[sourceIndexPath.row].parent.subtasks.remove(at: indexOfA!)
+            sections[sourceIndexPath.section].tasks[sourceIndexPath.row].parent.subtasks.remove(at: sourceIndexPath.row)
+        }
+        let temp = sections[sourceIndexPath.section].tasks.remove(at: sourceIndexPath.item)
+        
+        if (sections[destinationIndexPath.section].level > 0){
+            
+            sections[destinationIndexPath.section].tasks[0].parent.subtasks.insert(temp, at: destinationIndexPath.row)
             
         }
-        /////////////////Удаление из списка
         
-        let temp = cvTasks.remove(at: sourceIndexPath.item)
+        sections[destinationIndexPath.section].tasks.insert(temp, at: destinationIndexPath.row)
         
-        /////////////////Вставка в основной массив
-    
-        if (destinationIndexPath.row < cvTasks.count){
-            temp.level = taskTmp.level
-            if (temp.level > 0){
-                let indexOfA = taskTmp.parent.subtasks.index(of: taskTmp)
-                taskTmp.parent.subtasks.insert(temp, at: indexOfA!)
+        
+        if (sections[sourceIndexPath.section].level > 0){
+            
+            let section: Int = sourceIndexPath.section-1
+            let row: Int = sections[sourceIndexPath.section-1].tasks.count-1
+            
+            if (sections[sourceIndexPath.section].tasks.count == 0 && sections[sourceIndexPath.section].level > 0){
+                closeTask(indexPath: IndexPath(item: row, section: section))
             }
-        }
-        else{
-            temp.level = 0
+            
         }
         
-        ///////////////Вставка в список
-        temp.parent = taskTmp.parent
-        cvTasks.insert(temp, at: destinationIndexPath.row)
-        //cV.reloadData()
+        cV.reloadData()
         
     }
     
@@ -226,32 +244,35 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if (isCopyTime){
-            /////////////////////////////////////////////Копирование в задачу
-            tmpTask.parent = cvTasks[indexPath.row]
-            cvTasks[indexPath.row].subtasks.append(tmpTask)
+            tmpTask.parent = sections[indexPath.section].tasks[indexPath.row]
+            sections[indexPath.section].tasks[indexPath.row].subtasks.append(tmpTask)
             cV.reloadData()
             isCopyTime = false
         }
         else{
-            /////////////////////////////////////////////Открытие задачи
-            if (cvTasks[indexPath.row].subtasks.count != 0 && cvTasks[indexPath.row].isOpen == false){
-                cvTasks[indexPath.row].isOpen = true
-                let cell = cV.cellForItem(at: indexPath) as! TaskCell
-                cell.labelStatus.text = "V"
-                /////////////////Вставка ряда подзадач
-                for element in 0..<cvTasks[indexPath.row].subtasks.count{
-                    cvTasks[indexPath.row].subtasks[element].level = cvTasks[indexPath.row].level + 1
-                    cvTasks.insert(cvTasks[indexPath.row].subtasks[element], at: indexPath.row + element + 1)
-                    collectionView.insertItems(at: [IndexPath(item: indexPath.row + element + 1, section: 0)])
+            if (sections[indexPath.section].tasks[indexPath.row].subtasks.count != 0 && sections[indexPath.section].tasks[indexPath.row].isOpen == false){
+                
+                sections[indexPath.section].tasks[indexPath.row].isOpen = true
+                tmpSection = sections.remove(at: indexPath.section)
+                sections.insert(Section(tasks: Array<Task>(tmpSection.tasks[0..<indexPath.row+1]), level:tmpSection.level), at: indexPath.section)
+                sections.insert(Section(tasks: tmpSection.tasks[indexPath.row].subtasks, level:tmpSection.level+1), at: indexPath.section+1)
+                
+                if(indexPath.row + 1 < tmpSection.tasks.count){
+                    
+                    sections.insert(Section(tasks: Array<Task>(tmpSection.tasks[indexPath.row+1..<tmpSection.tasks.count]), level:tmpSection.level), at:indexPath.section+2)
+                    
                 }
+                
             }
                 
-            else if (cvTasks[indexPath.row].isOpen){
+            else if (sections[indexPath.section].tasks[indexPath.row].isOpen){
                 
                 closeTask(indexPath: indexPath)
                 
             }
         }
+        
+        cV.reloadData()
         
     }
     
@@ -260,61 +281,64 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let flag = sender as! Int
         var tmpParent: Task!
         var isOpenTmp: Bool = false
-        if (cvTasks[indexPath.row].level > 0){
-            tmpParent = cvTasks[indexPath.row].parent
+        if (sections[indexPath.section].level > 0){
+            tmpParent = sections[indexPath.section].tasks[indexPath.row].parent
         }
-        //////////////////////Копирование задачи
-        if (flag == 1){
-            /////////////////Закрытие подзадач
-            if (cvTasks[indexPath.row].isOpen){
+        
+        if (flag == 1){    //копирование задачи
+            if (sections[indexPath.section].tasks[indexPath.row].isOpen){
                 closeTask(indexPath: indexPath)
                 isOpenTmp = true
             }
-            /////////////////Удаление из массива подзадач
-            if (cvTasks[indexPath.row].level > 0){
-                let indexOfA = tmpParent.subtasks.index(of: cvTasks[indexPath.row])
-                tmpParent.subtasks.remove(at: indexOfA!)
+            if (sections[indexPath.section].level > 0){
+                tmpParent.subtasks.remove(at: indexPath.row)
             }
-            ////////////////Удаление из массива задач
-            tmpTask = cvTasks.remove(at: indexPath.row)
-            
-            ////////////////Удаление с анимацией
+            tmpTask = sections[indexPath.section].tasks.remove(at: indexPath.row)
             if (!isOpenTmp){
                 cV.deleteItems(at: [indexPath])
+            }
+            if (sections[indexPath.section].level > 0 && tmpParent.subtasks.count == 0){
+                let section: Int = indexPath.section-1
+                let row: Int = sections[indexPath.section-1].tasks.count-1
+                closeTask(indexPath: IndexPath(item: row, section: section))
             }
             cV.reloadData()
             isCopyTime = true
-            
-            
-        ///////////////////////Закрытие задачи
-        } else if (flag == 2){
-            /////////////////Закрытие подзадач
-            if (cvTasks[indexPath.row].isOpen){
+        } else if (flag == 2){          //закрытие задачи
+            if (sections[indexPath.section].tasks[indexPath.row].isOpen){
                 closeTask(indexPath: indexPath)
                 isOpenTmp = true
             }
-            cvTasks[indexPath.row].isFinish = true
-            if (cvTasks[indexPath.row].level > 0){
-                let indexOfA = tmpParent.subtasks.index(of: cvTasks[indexPath.row])
+            sections[indexPath.section].tasks[indexPath.row].isFinish = true //ПРОВЕРИТЬ ЭТОТ МОМЕНТ
+            finishedTasks.append(sections[indexPath.section].tasks.remove(at: indexPath.row))
+            if (sections[indexPath.section].level > 0){
                 tmpParent.subtasks.remove(at: indexPath.row)
             }
-            finishedTasks.append(cvTasks.remove(at: indexPath.row))
             if (!isOpenTmp){
                 cV.deleteItems(at: [indexPath])
+            }
+            if (sections[indexPath.section].level > 0 && tmpParent.subtasks.count == 0){
+                let section: Int = indexPath.section-1
+                let row: Int = sections[indexPath.section-1].tasks.count-1
+                closeTask(indexPath: IndexPath(item: row, section: section))
             }
             cV.reloadData()
-        //////////////////////Удаление задачи
-        } else if (flag == 3){
-            if (cvTasks[indexPath.row].isOpen){
+        } else if (flag == 3){          //удаление задачи
+            if (sections[indexPath.section].tasks[indexPath.row].isOpen){
                 closeTask(indexPath: indexPath)
                 isOpenTmp = true
             }
-            if (cvTasks[indexPath.row].level > 0){
+            sections[indexPath.section].tasks.remove(at: indexPath.row)
+            if (sections[indexPath.section].level > 0){
                 tmpParent.subtasks.remove(at: indexPath.row)
             }
-            cvTasks.remove(at: indexPath.row)
             if (!isOpenTmp){
                 cV.deleteItems(at: [indexPath])
+            }
+            if (sections[indexPath.section].level > 0 && tmpParent.subtasks.count == 0){
+                let section: Int = indexPath.section-1
+                let row: Int = sections[indexPath.section-1].tasks.count-1
+                closeTask(indexPath: IndexPath(item: row, section: section))
             }
             cV.reloadData()
         }
@@ -331,7 +355,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         ok.title = "Готово"
-
+        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -340,23 +364,48 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return true
     }
     
-    func closeTask(indexPath: IndexPath) {
+    func closeTask(indexPath: IndexPath) { //должна быть открыта и иметь подзадачи
         
-        for element in 0..<cvTasks[indexPath.row].subtasks.count{
-            if (cvTasks[indexPath.row+1].isOpen){
-                closeTask(indexPath: IndexPath(item: indexPath.row+1, section: 0))
+        var c: Int = 0
+        
+        
+        for sectionNum in indexPath.section+1..<sections.count{
+            if (sections[sectionNum].level == sections[indexPath.section+1].level){
+                c += cV.numberOfItems(inSection: sectionNum)
             }
-            cvTasks.remove(at: indexPath.row+1)
-            let tmp = IndexPath(item: indexPath.row+1, section: 0)
-            cV.deleteItems(at: [tmp])
+            if (sections[sectionNum].level < sections[indexPath.section+1].level){
+                break
+            }
         }
         
-        cvTasks[indexPath.row].isOpen = false
-        let cell = cV.cellForItem(at: indexPath) as! TaskCell
-        cell.labelStatus.text = ">"
-
+        for i in 0..<c{                         //Закрываем все подзадачи рекурсивно
+            
+            if sections[indexPath.section + 1].tasks[i].isOpen{
+                closeTask(indexPath: IndexPath(row: i, section: indexPath.section + 1))
+            }
+        }
+        
+        sections[indexPath.section].tasks[indexPath.row].isOpen = false
+        let currentLevel = sections[indexPath.section].level
+        var count: Int = 0
+        
+        if (indexPath.section+2 < sections.count && sections[indexPath.section+2].level == currentLevel){
+            tmpTasks = sections[indexPath.section].tasks + sections[indexPath.section+2].tasks
+            count = 3
+        }
+        else{
+            tmpTasks = sections[indexPath.section].tasks
+            count = 2
+        }
+        
+        for j in 0..<count{
+            sections.remove(at: indexPath.section)
+        }
+        
+        sections.insert(Section(tasks: tmpTasks, level: currentLevel), at: indexPath.section)
+        
     }
-
+    
     
     @IBAction func pressOkButton(){
         
@@ -372,7 +421,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func dismissKeyboard() {
-
+        
         addTask()
         datePicker.isHidden = true
         
@@ -404,7 +453,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 isSetDate = false
             }
             
-            cvTasks.insert(task, at: 1)
+            sections[0].tasks.insert(task, at: 1)
             cell.textField.text = ""
             cV.reloadData()
         }
@@ -412,23 +461,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func datePickerChanged(sender: UIDatePicker){
-    
+        
         isSetDate = true
         
     }
     
-    /*func findElement(array: [Task], object: Task) -> Int{
-        
-        for i in 0..<array.count{
-            if(array[i] == object){
-                return i
-            }
-        }
-        
-    }*/
     
     
-}
+}*/
 
 
 
