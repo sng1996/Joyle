@@ -1,18 +1,16 @@
 //
-//  TaskCell.swift
+//  GroupCell.swift
 //  Joyle
 //
-//  Created by Сергей Гаврилко on 06.09.17.
+//  Created by Сергей Гаврилко on 16.09.17.
 //  Copyright © 2017 Сергей Гаврилко. All rights reserved.
 //
 
 import UIKit
 
-class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
+class GroupCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
-    @IBOutlet var label: UILabel!
-    @IBOutlet var labelStatus: UILabel!
-    @IBOutlet var labelDate: UILabel!
+    @IBOutlet var textField: UITextField!
     var pan: UIPanGestureRecognizer!
     var deleteBtn: UIButton!
     var editBtn: UIButton!
@@ -46,10 +44,10 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         self.insertSubview(editBtn, belowSubview: self.contentView)
         
         pan = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
-        pan.delegate = self
+        pan.delegate = self as! UIGestureRecognizerDelegate
         self.addGestureRecognizer(pan)
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -64,7 +62,7 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         }
         
     }
-
+    
     func onPan(_ pan: UIPanGestureRecognizer) {
         
         if pan.state == UIGestureRecognizerState.began {
@@ -72,7 +70,7 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         } else if pan.state == UIGestureRecognizerState.changed {
             self.setNeedsLayout()
         } else {
-            if pan.velocity(in: self).x > 500 {
+            /*if pan.velocity(in: self).x > 500 {
                 let collectionView: UICollectionView = self.superview as! UICollectionView
                 let indexPath: IndexPath = collectionView.indexPathForItem(at: self.center)!
                 collectionView.delegate?.collectionView!(collectionView, performAction: #selector(onPan(_:)), forItemAt: indexPath, withSender: 1)
@@ -81,7 +79,7 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                 let indexPath: IndexPath = collectionView.indexPathForItem(at: self.center)!
                 collectionView.delegate?.collectionView!(collectionView, performAction: #selector(onPan(_:)), forItemAt: indexPath, withSender: 2)
             }
-            else{
+            else{*/
                 
                 UIView.animate(withDuration: 0.2, animations: {
                     if (self.contentView.frame.origin.x < 100){
@@ -95,7 +93,7 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                     }
                 })
                 
-            }
+            //}
         }
     }
     
@@ -118,6 +116,7 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     func editTask(){
         let collectionView: UICollectionView = self.superview as! UICollectionView
         let indexPath: IndexPath = collectionView.indexPathForItem(at: self.center)!
-        collectionView.delegate?.collectionView!(collectionView, performAction: #selector(editTask), forItemAt: indexPath, withSender: 4)
+        collectionView.delegate?.collectionView!(collectionView, performAction: #selector(editTask), forItemAt: indexPath, withSender: 2)
     }
+    
 }

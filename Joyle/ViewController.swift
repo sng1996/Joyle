@@ -6,25 +6,26 @@
 //  Copyright © 2017 Сергей Гаврилко. All rights reserved.
 //
 
-// сделать insert в коллекцию, должно быть с анимацией
 // свайп не по скорости а по длине
-// think about deleteItems and deleteSections
 
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, isAbleToReceiveData{
     
     fileprivate var longPressGesture: UILongPressGestureRecognizer!
     @IBOutlet var cV: UICollectionView!
     @IBOutlet var ok: UIBarButtonItem!
     @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var textField: UITextField!
     
     var cvTasks: [Task] = []
     var finishedTasks: [Task] = []
     var tmpTask: Task!
     var isCopyTime: Bool = false
     var isSetDate: Bool = false
+    var passedTask: Task!
+    var passedIndexPath: IndexPath!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,10 @@ class ViewController: UIViewController {
             let task = Task(name: "Task " + String(i))
             cvTasks.append(task)
         }
+        
+        /*if (passedTask != nil){
+            cvTasks[passedIndexPath.row] = passedTask
+        }*/
         
         ok.title = ""
         
@@ -47,6 +52,19 @@ class ViewController: UIViewController {
         datePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
         datePicker.backgroundColor = UIColor.white
         
+        let customView = UIView(frame: CGRect(x:0,y:0,width:320,height:40))
+        let btn = UIButton(frame: CGRect(x:205,y:5,width:100,height:30))
+        btn.setTitle("Calendar", for: .normal)
+        btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.addTarget(self, action: #selector(openCalendar), for: UIControlEvents.touchUpInside)
+        customView.backgroundColor = UIColor.white
+        customView.addSubview(btn)
+        textField.inputAccessoryView = customView
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        cV.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +84,9 @@ class ViewController: UIViewController {
                 break
             }
             
-            cV.beginInteractiveMovementForItem(at: selectedIndexPath)
+            if (!cvTasks[selectedIndexPath.row].isOpen){
+                cV.beginInteractiveMovementForItem(at: selectedIndexPath)
+            }
             
         case UIGestureRecognizerState.changed:
             
@@ -94,6 +114,12 @@ class ViewController: UIViewController {
         return indexPaths
         
     }
+    
+    func pass(data: Task, path: IndexPath) {
+        
+        cvTasks[path.row] = data
+        
+    }
 
 
 }
@@ -119,24 +145,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addTaskCell", for: indexPath) as! AddTaskCell
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TaskCell
         
-        if (indexPath.row == 0){
-            
-            let customView = UIView(frame: CGRect(x:0,y:0,width:320,height:40))
-            var btn = UIButton(frame: CGRect(x:205,y:5,width:100,height:30))
-            btn.setTitle("Calendar", for: .normal)
-            btn.setTitleColor(UIColor.blue, for: .normal)
-            btn.addTarget(self, action: #selector(openCalendar), for: UIControlEvents.touchUpInside)
-            customView.backgroundColor = UIColor.white
-            customView.addSubview(btn)
-            addCell.textField.inputAccessoryView = customView
-            
-            return addCell
-            
-        }
         
         cell.label.text = cvTasks[indexPath.row].name
         cell.labelDate.text = cvTasks[indexPath.row].date
@@ -182,12 +192,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
-        let taskTmp = cvTasks[destinationIndexPath.row]
+        var taskTmp: Task!
+        
+        if (sourceIndexPath.row < destinationIndexPath.row){
+            taskTmp = cvTasks[destinationIndexPath.row+1]
+        }
+        else{
+            taskTmp = cvTasks[destinationIndexPath.row]
+        }
         
         ///////////////Закрытие пустой задачи
         
-        if (cvTasks[sourceIndexPath.row].level > 0 && cvTasks[sourceIndexPath.row].parent.subtasks.count == 1 && cvTasks[sourceIndexPath.row-1].parent.isOpen){
-            cvTasks[sourceIndexPath.row-1].parent.isOpen = false
+        if (cvTasks[sourceIndexPath.row].level > 0 && cvTasks[sourceIndexPath.row].parent.subtasks.count == 1 && cvTasks[sourceIndexPath.row].parent.isOpen){
+            cvTasks[sourceIndexPath.row].parent.isOpen = false
         }
         
         ///////////////Удаление из основного массива
@@ -227,10 +244,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if (isCopyTime){
             /////////////////////////////////////////////Копирование в задачу
+            var isCopied = false
             tmpTask.parent = cvTasks[indexPath.row]
+            tmpTask.level = tmpTask.parent.level + 1
             cvTasks[indexPath.row].subtasks.append(tmpTask)
-            cV.reloadData()
+            if (cvTasks[indexPath.row].isOpen){
+                for element in indexPath.row+1..<cvTasks.count{
+                    if (cvTasks[element].level < tmpTask.level){
+                        cvTasks.insert(tmpTask, at: element)
+                        isCopied = true
+                        break
+                    }
+                }
+                if (!isCopied){
+                    cvTasks.append(tmpTask)
+                }
+            }
             isCopyTime = false
+            cV.reloadData()
         }
         else{
             /////////////////////////////////////////////Открытие задачи
@@ -279,12 +310,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             tmpTask = cvTasks.remove(at: indexPath.row)
             
             ////////////////Удаление с анимацией
-            if (!isOpenTmp){
-                cV.deleteItems(at: [indexPath])
-            }
-            cV.reloadData()
+            cV.deleteItems(at: [indexPath])
             isCopyTime = true
-            
             
         ///////////////////////Закрытие задачи
         } else if (flag == 2){
@@ -296,13 +323,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             cvTasks[indexPath.row].isFinish = true
             if (cvTasks[indexPath.row].level > 0){
                 let indexOfA = tmpParent.subtasks.index(of: cvTasks[indexPath.row])
-                tmpParent.subtasks.remove(at: indexPath.row)
+                tmpParent.subtasks.remove(at: indexOfA!)
             }
             finishedTasks.append(cvTasks.remove(at: indexPath.row))
-            if (!isOpenTmp){
-                cV.deleteItems(at: [indexPath])
-            }
-            cV.reloadData()
+            cV.deleteItems(at: [indexPath])
         //////////////////////Удаление задачи
         } else if (flag == 3){
             if (cvTasks[indexPath.row].isOpen){
@@ -310,13 +334,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 isOpenTmp = true
             }
             if (cvTasks[indexPath.row].level > 0){
-                tmpParent.subtasks.remove(at: indexPath.row)
+                let indexOfA = tmpParent.subtasks.index(of: cvTasks[indexPath.row])
+                tmpParent.subtasks.remove(at: indexOfA!)
             }
             cvTasks.remove(at: indexPath.row)
-            if (!isOpenTmp){
-                cV.deleteItems(at: [indexPath])
-            }
-            cV.reloadData()
+            cV.deleteItems(at: [indexPath])
+            /////////////////Редактирование задачи
+        } else if (flag == 4){
+            let cell = collectionView.cellForItem(at: indexPath) as! TaskCell
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
+            nextViewController.task = cvTasks[indexPath.row]
+            nextViewController.indexPath = indexPath
+            nextViewController.delegate = self
+            self.present(nextViewController, animated:true, completion:nil)
+            UIView.animate(withDuration: 0.2, animations: {
+                cell.setNeedsLayout()
+                cell.layoutIfNeeded()
+            })
         }
     }
     
@@ -380,9 +415,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func diskey(){
         
-        let indexPath = IndexPath(item: 0, section: 0)           //    dismiss keyboard
-        let cell = cV.cellForItem(at: indexPath) as! AddTaskCell
-        cell.textField.resignFirstResponder()
+        textField.resignFirstResponder()
     }
     
     
@@ -390,12 +423,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         diskey()
         
-        let indexPath = IndexPath(item: 0, section: 0)
-        let cell = cV.cellForItem(at: indexPath) as! AddTaskCell
-        
-        if (cell.textField.text != ""){
+        if (textField.text != ""){
             
-            let task = Task(name: cell.textField.text!)
+            let task = Task(name: textField.text!)
             
             if (isSetDate){
                 let formatter = DateFormatter()
@@ -404,8 +434,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 isSetDate = false
             }
             
-            cvTasks.insert(task, at: 1)
-            cell.textField.text = ""
+            cvTasks.insert(task, at: 0)
+            textField.text = ""
             cV.reloadData()
         }
         
@@ -416,17 +446,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         isSetDate = true
         
     }
-    
-    /*func findElement(array: [Task], object: Task) -> Int{
-        
-        for i in 0..<array.count{
-            if(array[i] == object){
-                return i
-            }
-        }
-        
-    }*/
-    
     
 }
 

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2A415A901F6569520017DF85 /* TmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A415A8F1F6569520017DF85 /* TmpViewController.swift */; };
+		2A76165E1F6D138100C86201 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76165D1F6D138100C86201 /* GroupCell.swift */; };
+		2A7616601F6D13D500C86201 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76165F1F6D13D500C86201 /* GroupViewController.swift */; };
+		2A7616621F6D14D700C86201 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7616611F6D14D700C86201 /* TodayViewController.swift */; };
+		2A7616641F6D640C00C86201 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7616631F6D640C00C86201 /* EditViewController.swift */; };
 		2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */; };
 		2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C81F5FEE1E00D9B16A /* ViewController.swift */; };
 		2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */; };
@@ -17,8 +21,6 @@
 		2AA598E71F5FEE1E00D9B16A /* JoyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598E61F5FEE1E00D9B16A /* JoyleUITests.swift */; };
 		2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */; };
 		2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F61F5FF06A00D9B16A /* Task.swift */; };
-		2AA598F91F618B0500D9B16A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F81F618B0500D9B16A /* Section.swift */; };
-		2AA598FB1F61C78500D9B16A /* AddTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598FA1F61C78500D9B16A /* AddTaskCell.swift */; };
 		AC19DB6DE3AC33CEF72F09E2 /* Pods_Joyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		2A415A8F1F6569520017DF85 /* TmpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpViewController.swift; sourceTree = "<group>"; };
+		2A76165D1F6D138100C86201 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		2A76165F1F6D13D500C86201 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		2A7616611F6D14D700C86201 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		2A7616631F6D640C00C86201 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		2AA598C31F5FEE1E00D9B16A /* Joyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AA598C81F5FEE1E00D9B16A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +62,6 @@
 		2AA598E81F5FEE1E00D9B16A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		2AA598F61F5FF06A00D9B16A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		2AA598F81F618B0500D9B16A /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		2AA598FA1F61C78500D9B16A /* AddTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCell.swift; sourceTree = "<group>"; };
 		745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A2A04B71AEA9B38B2E5B3F /* Pods-Joyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Joyle/Pods-Joyle.release.xcconfig"; sourceTree = "<group>"; };
 		AF313C7040F0B439EC5560A4 /* Pods-Joyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Joyle/Pods-Joyle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,14 +121,16 @@
 			children = (
 				2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */,
 				2AA598C81F5FEE1E00D9B16A /* ViewController.swift */,
+				2A76165F1F6D13D500C86201 /* GroupViewController.swift */,
+				2A7616611F6D14D700C86201 /* TodayViewController.swift */,
 				2AA598F61F5FF06A00D9B16A /* Task.swift */,
 				2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */,
-				2AA598FA1F61C78500D9B16A /* AddTaskCell.swift */,
+				2A76165D1F6D138100C86201 /* GroupCell.swift */,
+				2A7616631F6D640C00C86201 /* EditViewController.swift */,
 				2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */,
-				2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */,
 				2AA598CF1F5FEE1E00D9B16A /* LaunchScreen.storyboard */,
+				2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */,
 				2AA598D21F5FEE1E00D9B16A /* Info.plist */,
-				2AA598F81F618B0500D9B16A /* Section.swift */,
 			);
 			path = Joyle;
 			sourceTree = "<group>";
@@ -352,13 +358,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA598F91F618B0500D9B16A /* Section.swift in Sources */,
+				2A7616601F6D13D500C86201 /* GroupViewController.swift in Sources */,
 				2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */,
+				2A7616621F6D14D700C86201 /* TodayViewController.swift in Sources */,
 				2A415A901F6569520017DF85 /* TmpViewController.swift in Sources */,
 				2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */,
 				2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */,
-				2AA598FB1F61C78500D9B16A /* AddTaskCell.swift in Sources */,
 				2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */,
+				2A76165E1F6D138100C86201 /* GroupCell.swift in Sources */,
+				2A7616641F6D640C00C86201 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

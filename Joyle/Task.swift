@@ -17,6 +17,7 @@ class Task: NSObject {
     var isFinish: Bool = false
     var date: String = ""
     var level: Int = 0
+    var des: String = ""
     
     init(name: String){
         self.name = name
