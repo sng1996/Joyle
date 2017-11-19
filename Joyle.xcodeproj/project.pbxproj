@@ -7,11 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A415A901F6569520017DF85 /* TmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A415A8F1F6569520017DF85 /* TmpViewController.swift */; };
-		2A76165E1F6D138100C86201 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76165D1F6D138100C86201 /* GroupCell.swift */; };
-		2A7616601F6D13D500C86201 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76165F1F6D13D500C86201 /* GroupViewController.swift */; };
-		2A7616621F6D14D700C86201 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7616611F6D14D700C86201 /* TodayViewController.swift */; };
-		2A7616641F6D640C00C86201 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7616631F6D640C00C86201 /* EditViewController.swift */; };
+		2A21C0221FC08CE5006BAAE4 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A21C0211FC08CE5006BAAE4 /* GroupCell.swift */; };
+		2A21C0241FC09A4E006BAAE4 /* ViewControllerDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */; };
+		2A21C0261FC09F0D006BAAE4 /* ViewControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */; };
+		2A5E3F861FC0A896005F9401 /* FuturaPTBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F6B1FC0A895005F9401 /* FuturaPTBold.otf */; };
+		2A5E3F871FC0A896005F9401 /* FuturaPTBoldOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F6C1FC0A895005F9401 /* FuturaPTBoldOblique.otf */; };
+		2A5E3F881FC0A896005F9401 /* FuturaPTBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F6D1FC0A895005F9401 /* FuturaPTBook.otf */; };
+		2A5E3F891FC0A896005F9401 /* FuturaPTBookOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F6E1FC0A895005F9401 /* FuturaPTBookOblique.otf */; };
+		2A5E3F8A1FC0A896005F9401 /* FuturaPTCondBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F6F1FC0A895005F9401 /* FuturaPTCondBold.otf */; };
+		2A5E3F8B1FC0A896005F9401 /* FuturaPTCondBoldOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F701FC0A895005F9401 /* FuturaPTCondBoldOblique.otf */; };
+		2A5E3F8C1FC0A896005F9401 /* FuturaPTCondBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F711FC0A895005F9401 /* FuturaPTCondBook.otf */; };
+		2A5E3F8D1FC0A896005F9401 /* FuturaPTCondBookOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F721FC0A896005F9401 /* FuturaPTCondBookOblique.otf */; };
+		2A5E3F8E1FC0A896005F9401 /* FuturaPTCondExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F731FC0A896005F9401 /* FuturaPTCondExtraBold.otf */; };
+		2A5E3F8F1FC0A896005F9401 /* FuturaPTCondExtraBoldOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F741FC0A896005F9401 /* FuturaPTCondExtraBoldOblique.otf */; };
+		2A5E3F901FC0A896005F9401 /* FuturaPTCondMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F751FC0A896005F9401 /* FuturaPTCondMedium.otf */; };
+		2A5E3F911FC0A896005F9401 /* FuturaPTCondMediumOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F761FC0A896005F9401 /* FuturaPTCondMediumOblique.otf */; };
+		2A5E3F921FC0A896005F9401 /* FuturaPTDemi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F771FC0A896005F9401 /* FuturaPTDemi.otf */; };
+		2A5E3F931FC0A896005F9401 /* FuturaPTDemiOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F781FC0A896005F9401 /* FuturaPTDemiOblique.otf */; };
+		2A5E3F941FC0A896005F9401 /* FuturaPTExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F791FC0A896005F9401 /* FuturaPTExtraBold.otf */; };
+		2A5E3F951FC0A896005F9401 /* FuturaPTExtraBoldOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F7A1FC0A896005F9401 /* FuturaPTExtraBoldOblique.otf */; };
+		2A5E3F961FC0A896005F9401 /* FuturaPTHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F7B1FC0A896005F9401 /* FuturaPTHeavy.otf */; };
+		2A5E3F971FC0A896005F9401 /* FuturaPTHeavyOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F7C1FC0A896005F9401 /* FuturaPTHeavyOblique.otf */; };
+		2A5E3F981FC0A896005F9401 /* FuturaPTLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F7D1FC0A896005F9401 /* FuturaPTLight.otf */; };
+		2A5E3F991FC0A896005F9401 /* FuturaPTLightOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F7E1FC0A896005F9401 /* FuturaPTLightOblique.otf */; };
+		2A5E3F9A1FC0A896005F9401 /* FuturaPTMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F7F1FC0A896005F9401 /* FuturaPTMedium.otf */; };
+		2A5E3F9B1FC0A896005F9401 /* FuturaPTMediumOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F801FC0A896005F9401 /* FuturaPTMediumOblique.otf */; };
+		2A5E3F9C1FC0A896005F9401 /* MuseoSansCyrl.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F811FC0A896005F9401 /* MuseoSansCyrl.otf */; };
+		2A5E3F9D1FC0A896005F9401 /* MuseoSansCyrl_0.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F821FC0A896005F9401 /* MuseoSansCyrl_0.otf */; };
+		2A5E3F9E1FC0A896005F9401 /* MuseoSansCyrl_1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F831FC0A896005F9401 /* MuseoSansCyrl_1.otf */; };
+		2A5E3F9F1FC0A896005F9401 /* MuseoSansCyrl_2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F841FC0A896005F9401 /* MuseoSansCyrl_2.otf */; };
+		2A5E3FA01FC0A896005F9401 /* MuseoSansCyrl_3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F851FC0A896005F9401 /* MuseoSansCyrl_3.otf */; };
 		2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */; };
 		2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598C81F5FEE1E00D9B16A /* ViewController.swift */; };
 		2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */; };
@@ -42,11 +67,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A415A8F1F6569520017DF85 /* TmpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpViewController.swift; sourceTree = "<group>"; };
-		2A76165D1F6D138100C86201 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
-		2A76165F1F6D13D500C86201 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
-		2A7616611F6D14D700C86201 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		2A7616631F6D640C00C86201 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		2A21C0211FC08CE5006BAAE4 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDesign.swift; sourceTree = "<group>"; };
+		2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerController.swift; sourceTree = "<group>"; };
+		2A5E3F6B1FC0A895005F9401 /* FuturaPTBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTBold.otf; sourceTree = "<group>"; };
+		2A5E3F6C1FC0A895005F9401 /* FuturaPTBoldOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTBoldOblique.otf; sourceTree = "<group>"; };
+		2A5E3F6D1FC0A895005F9401 /* FuturaPTBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTBook.otf; sourceTree = "<group>"; };
+		2A5E3F6E1FC0A895005F9401 /* FuturaPTBookOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTBookOblique.otf; sourceTree = "<group>"; };
+		2A5E3F6F1FC0A895005F9401 /* FuturaPTCondBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondBold.otf; sourceTree = "<group>"; };
+		2A5E3F701FC0A895005F9401 /* FuturaPTCondBoldOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondBoldOblique.otf; sourceTree = "<group>"; };
+		2A5E3F711FC0A895005F9401 /* FuturaPTCondBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondBook.otf; sourceTree = "<group>"; };
+		2A5E3F721FC0A896005F9401 /* FuturaPTCondBookOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondBookOblique.otf; sourceTree = "<group>"; };
+		2A5E3F731FC0A896005F9401 /* FuturaPTCondExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondExtraBold.otf; sourceTree = "<group>"; };
+		2A5E3F741FC0A896005F9401 /* FuturaPTCondExtraBoldOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondExtraBoldOblique.otf; sourceTree = "<group>"; };
+		2A5E3F751FC0A896005F9401 /* FuturaPTCondMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondMedium.otf; sourceTree = "<group>"; };
+		2A5E3F761FC0A896005F9401 /* FuturaPTCondMediumOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTCondMediumOblique.otf; sourceTree = "<group>"; };
+		2A5E3F771FC0A896005F9401 /* FuturaPTDemi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTDemi.otf; sourceTree = "<group>"; };
+		2A5E3F781FC0A896005F9401 /* FuturaPTDemiOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTDemiOblique.otf; sourceTree = "<group>"; };
+		2A5E3F791FC0A896005F9401 /* FuturaPTExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTExtraBold.otf; sourceTree = "<group>"; };
+		2A5E3F7A1FC0A896005F9401 /* FuturaPTExtraBoldOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTExtraBoldOblique.otf; sourceTree = "<group>"; };
+		2A5E3F7B1FC0A896005F9401 /* FuturaPTHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTHeavy.otf; sourceTree = "<group>"; };
+		2A5E3F7C1FC0A896005F9401 /* FuturaPTHeavyOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTHeavyOblique.otf; sourceTree = "<group>"; };
+		2A5E3F7D1FC0A896005F9401 /* FuturaPTLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTLight.otf; sourceTree = "<group>"; };
+		2A5E3F7E1FC0A896005F9401 /* FuturaPTLightOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTLightOblique.otf; sourceTree = "<group>"; };
+		2A5E3F7F1FC0A896005F9401 /* FuturaPTMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTMedium.otf; sourceTree = "<group>"; };
+		2A5E3F801FC0A896005F9401 /* FuturaPTMediumOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTMediumOblique.otf; sourceTree = "<group>"; };
+		2A5E3F811FC0A896005F9401 /* MuseoSansCyrl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSansCyrl.otf; sourceTree = "<group>"; };
+		2A5E3F821FC0A896005F9401 /* MuseoSansCyrl_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSansCyrl_0.otf; sourceTree = "<group>"; };
+		2A5E3F831FC0A896005F9401 /* MuseoSansCyrl_1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSansCyrl_1.otf; sourceTree = "<group>"; };
+		2A5E3F841FC0A896005F9401 /* MuseoSansCyrl_2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSansCyrl_2.otf; sourceTree = "<group>"; };
+		2A5E3F851FC0A896005F9401 /* MuseoSansCyrl_3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSansCyrl_3.otf; sourceTree = "<group>"; };
 		2AA598C31F5FEE1E00D9B16A /* Joyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AA598C81F5FEE1E00D9B16A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,10 +143,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A5E3F6A1FC0A895005F9401 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2A5E3F6B1FC0A895005F9401 /* FuturaPTBold.otf */,
+				2A5E3F6C1FC0A895005F9401 /* FuturaPTBoldOblique.otf */,
+				2A5E3F6D1FC0A895005F9401 /* FuturaPTBook.otf */,
+				2A5E3F6E1FC0A895005F9401 /* FuturaPTBookOblique.otf */,
+				2A5E3F6F1FC0A895005F9401 /* FuturaPTCondBold.otf */,
+				2A5E3F701FC0A895005F9401 /* FuturaPTCondBoldOblique.otf */,
+				2A5E3F711FC0A895005F9401 /* FuturaPTCondBook.otf */,
+				2A5E3F721FC0A896005F9401 /* FuturaPTCondBookOblique.otf */,
+				2A5E3F731FC0A896005F9401 /* FuturaPTCondExtraBold.otf */,
+				2A5E3F741FC0A896005F9401 /* FuturaPTCondExtraBoldOblique.otf */,
+				2A5E3F751FC0A896005F9401 /* FuturaPTCondMedium.otf */,
+				2A5E3F761FC0A896005F9401 /* FuturaPTCondMediumOblique.otf */,
+				2A5E3F771FC0A896005F9401 /* FuturaPTDemi.otf */,
+				2A5E3F781FC0A896005F9401 /* FuturaPTDemiOblique.otf */,
+				2A5E3F791FC0A896005F9401 /* FuturaPTExtraBold.otf */,
+				2A5E3F7A1FC0A896005F9401 /* FuturaPTExtraBoldOblique.otf */,
+				2A5E3F7B1FC0A896005F9401 /* FuturaPTHeavy.otf */,
+				2A5E3F7C1FC0A896005F9401 /* FuturaPTHeavyOblique.otf */,
+				2A5E3F7D1FC0A896005F9401 /* FuturaPTLight.otf */,
+				2A5E3F7E1FC0A896005F9401 /* FuturaPTLightOblique.otf */,
+				2A5E3F7F1FC0A896005F9401 /* FuturaPTMedium.otf */,
+				2A5E3F801FC0A896005F9401 /* FuturaPTMediumOblique.otf */,
+				2A5E3F811FC0A896005F9401 /* MuseoSansCyrl.otf */,
+				2A5E3F821FC0A896005F9401 /* MuseoSansCyrl_0.otf */,
+				2A5E3F831FC0A896005F9401 /* MuseoSansCyrl_1.otf */,
+				2A5E3F841FC0A896005F9401 /* MuseoSansCyrl_2.otf */,
+				2A5E3F851FC0A896005F9401 /* MuseoSansCyrl_3.otf */,
+			);
+			path = fonts;
+			sourceTree = SOURCE_ROOT;
+		};
 		2AA598BA1F5FEE1E00D9B16A = {
 			isa = PBXGroup;
 			children = (
-				2A415A8F1F6569520017DF85 /* TmpViewController.swift */,
 				2AA598C51F5FEE1E00D9B16A /* Joyle */,
 				2AA598DA1F5FEE1E00D9B16A /* JoyleTests */,
 				2AA598E51F5FEE1E00D9B16A /* JoyleUITests */,
@@ -121,15 +204,15 @@
 			children = (
 				2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */,
 				2AA598C81F5FEE1E00D9B16A /* ViewController.swift */,
-				2A76165F1F6D13D500C86201 /* GroupViewController.swift */,
-				2A7616611F6D14D700C86201 /* TodayViewController.swift */,
+				2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */,
+				2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */,
 				2AA598F61F5FF06A00D9B16A /* Task.swift */,
 				2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */,
-				2A76165D1F6D138100C86201 /* GroupCell.swift */,
-				2A7616631F6D640C00C86201 /* EditViewController.swift */,
+				2A21C0211FC08CE5006BAAE4 /* GroupCell.swift */,
 				2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */,
 				2AA598CF1F5FEE1E00D9B16A /* LaunchScreen.storyboard */,
 				2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */,
+				2A5E3F6A1FC0A895005F9401 /* fonts */,
 				2AA598D21F5FEE1E00D9B16A /* Info.plist */,
 			);
 			path = Joyle;
@@ -283,9 +366,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5E3F971FC0A896005F9401 /* FuturaPTHeavyOblique.otf in Resources */,
+				2A5E3F8E1FC0A896005F9401 /* FuturaPTCondExtraBold.otf in Resources */,
+				2A5E3F9E1FC0A896005F9401 /* MuseoSansCyrl_1.otf in Resources */,
+				2A5E3F921FC0A896005F9401 /* FuturaPTDemi.otf in Resources */,
 				2AA598D11F5FEE1E00D9B16A /* LaunchScreen.storyboard in Resources */,
+				2A5E3F891FC0A896005F9401 /* FuturaPTBookOblique.otf in Resources */,
+				2A5E3F8B1FC0A896005F9401 /* FuturaPTCondBoldOblique.otf in Resources */,
+				2A5E3F9D1FC0A896005F9401 /* MuseoSansCyrl_0.otf in Resources */,
+				2A5E3F871FC0A896005F9401 /* FuturaPTBoldOblique.otf in Resources */,
+				2A5E3F931FC0A896005F9401 /* FuturaPTDemiOblique.otf in Resources */,
+				2A5E3F8A1FC0A896005F9401 /* FuturaPTCondBold.otf in Resources */,
+				2A5E3F991FC0A896005F9401 /* FuturaPTLightOblique.otf in Resources */,
+				2A5E3F8F1FC0A896005F9401 /* FuturaPTCondExtraBoldOblique.otf in Resources */,
+				2A5E3F8D1FC0A896005F9401 /* FuturaPTCondBookOblique.otf in Resources */,
 				2AA598CE1F5FEE1E00D9B16A /* Assets.xcassets in Resources */,
+				2A5E3F951FC0A896005F9401 /* FuturaPTExtraBoldOblique.otf in Resources */,
+				2A5E3F881FC0A896005F9401 /* FuturaPTBook.otf in Resources */,
 				2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */,
+				2A5E3F981FC0A896005F9401 /* FuturaPTLight.otf in Resources */,
+				2A5E3F9F1FC0A896005F9401 /* MuseoSansCyrl_2.otf in Resources */,
+				2A5E3F9B1FC0A896005F9401 /* FuturaPTMediumOblique.otf in Resources */,
+				2A5E3F911FC0A896005F9401 /* FuturaPTCondMediumOblique.otf in Resources */,
+				2A5E3F941FC0A896005F9401 /* FuturaPTExtraBold.otf in Resources */,
+				2A5E3F961FC0A896005F9401 /* FuturaPTHeavy.otf in Resources */,
+				2A5E3FA01FC0A896005F9401 /* MuseoSansCyrl_3.otf in Resources */,
+				2A5E3F901FC0A896005F9401 /* FuturaPTCondMedium.otf in Resources */,
+				2A5E3F9A1FC0A896005F9401 /* FuturaPTMedium.otf in Resources */,
+				2A5E3F861FC0A896005F9401 /* FuturaPTBold.otf in Resources */,
+				2A5E3F9C1FC0A896005F9401 /* MuseoSansCyrl.otf in Resources */,
+				2A5E3F8C1FC0A896005F9401 /* FuturaPTCondBook.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,15 +468,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7616601F6D13D500C86201 /* GroupViewController.swift in Sources */,
+				2A21C0241FC09A4E006BAAE4 /* ViewControllerDesign.swift in Sources */,
+				2A21C0221FC08CE5006BAAE4 /* GroupCell.swift in Sources */,
 				2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */,
-				2A7616621F6D14D700C86201 /* TodayViewController.swift in Sources */,
-				2A415A901F6569520017DF85 /* TmpViewController.swift in Sources */,
 				2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */,
 				2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */,
 				2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */,
-				2A76165E1F6D138100C86201 /* GroupCell.swift in Sources */,
-				2A7616641F6D640C00C86201 /* EditViewController.swift in Sources */,
+				2A21C0261FC09F0D006BAAE4 /* ViewControllerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

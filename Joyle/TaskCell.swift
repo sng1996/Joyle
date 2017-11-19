@@ -11,13 +11,14 @@ import UIKit
 class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     @IBOutlet var label: UILabel!
-    @IBOutlet var labelStatus: UILabel!
-    @IBOutlet var labelDate: UILabel!
-    var pan: UIPanGestureRecognizer!
+    @IBOutlet var checkButton: UIButton!
+    @IBOutlet var arrowButton: UIButton!
+    @IBOutlet var plusImageView: UIImageView!
+    /*var pan: UIPanGestureRecognizer!
     var deleteBtn: UIButton!
-    var editBtn: UIButton!
+    var editBtn: UIButton!*/
     
-    override init(frame: CGRect) {
+    /*override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
@@ -25,10 +26,10 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-    }
+    }*/
     
     private func commonInit() {
-        self.contentView.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        /*self.contentView.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.backgroundColor = UIColor.gray
         
         deleteBtn = UIButton(frame: CGRect(x:0,y:0,width:50,height:50))
@@ -47,11 +48,11 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         
         pan = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
         pan.delegate = self
-        self.addGestureRecognizer(pan)
+        self.addGestureRecognizer(pan)*/
     }
 
     override func layoutSubviews() {
-        super.layoutSubviews()
+        /*super.layoutSubviews()
         
         if (pan.state == UIGestureRecognizerState.changed) {
             let p: CGPoint = pan.translation(in: self)
@@ -61,11 +62,11 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             self.deleteBtn.frame = CGRect(x: p.x - 2*deleteBtn.frame.size.width, y: 0, width: 50, height: height)
             self.editBtn.frame = CGRect(x: p.x - editBtn.frame.size.width, y: 0, width: 50, height: height)
             //self.editBtn.frame = CGRect(x: p.x + width + editBtn.frame.size.width, y: 0, width: 50, height: height)
-        }
+        }*/
         
     }
 
-    func onPan(_ pan: UIPanGestureRecognizer) {
+    /*func onPan(_ pan: UIPanGestureRecognizer) {
         
         if pan.state == UIGestureRecognizerState.began {
             
@@ -119,5 +120,5 @@ class TaskCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         let collectionView: UICollectionView = self.superview as! UICollectionView
         let indexPath: IndexPath = collectionView.indexPathForItem(at: self.center)!
         collectionView.delegate?.collectionView!(collectionView, performAction: #selector(editTask), forItemAt: indexPath, withSender: 4)
-    }
+    }*/
 }
