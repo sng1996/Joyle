@@ -1,21 +1,12 @@
 PODS:
-  - CADRACSwippableCell (0.0.1):
-    - ReactiveCocoa (~> 2.2)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
+  - JTAppleCalendar (7.1.1)
 
 DEPENDENCIES:
-  - CADRACSwippableCell
+  - JTAppleCalendar (~> 7.0)
 
 SPEC CHECKSUMS:
-  CADRACSwippableCell: 6935d451b910bcc035cbb465e4362640dc22670e
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  JTAppleCalendar: fa47313f1b9edfb84f771ceddd16ff43d01bb2d6
 
-PODFILE CHECKSUM: 40dfc6e8160c0fce9ce9a3c830f4899a822ba012
+PODFILE CHECKSUM: 2d522789d7d69dda2f41c86fef88e3353da70405
 
 COCOAPODS: 1.2.0

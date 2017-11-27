@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "979A8270F7958AC51E7CF4596404CEAE"
+               BlueprintIdentifier = "0CDB7FF3443F6D35B717BFFD3815E266"
                BuildableName = "Pods_Joyle.framework"
                BlueprintName = "Pods-Joyle"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "979A8270F7958AC51E7CF4596404CEAE"
+            BlueprintIdentifier = "0CDB7FF3443F6D35B717BFFD3815E266"
             BuildableName = "Pods_Joyle.framework"
             BlueprintName = "Pods-Joyle"
             ReferencedContainer = "container:Pods.xcodeproj">

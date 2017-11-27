@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A21C0221FC08CE5006BAAE4 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A21C0211FC08CE5006BAAE4 /* GroupCell.swift */; };
+		2A12E5621FC9E2BC0004A9B9 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E5611FC9E2BC0004A9B9 /* GroupsView.swift */; };
+		2A12E5641FC9E2DC0004A9B9 /* GroupsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A12E5631FC9E2DC0004A9B9 /* GroupsView.xib */; };
+		2A12E5671FC9E4E40004A9B9 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E5651FC9E4E40004A9B9 /* GroupCell.swift */; };
+		2A12E5681FC9E4E40004A9B9 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A12E5661FC9E4E40004A9B9 /* GroupCell.xib */; };
+		2A12E5701FC9F2600004A9B9 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E56F1FC9F2600004A9B9 /* AddNotificationView.swift */; };
+		2A12E5721FC9F27C0004A9B9 /* AddNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A12E5711FC9F27C0004A9B9 /* AddNotificationView.xib */; };
 		2A21C0241FC09A4E006BAAE4 /* ViewControllerDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */; };
 		2A21C0261FC09F0D006BAAE4 /* ViewControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */; };
 		2A5E3F861FC0A896005F9401 /* FuturaPTBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E3F6B1FC0A895005F9401 /* FuturaPTBold.otf */; };
@@ -46,6 +51,23 @@
 		2AA598E71F5FEE1E00D9B16A /* JoyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598E61F5FEE1E00D9B16A /* JoyleUITests.swift */; };
 		2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */; };
 		2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA598F61F5FF06A00D9B16A /* Task.swift */; };
+		2AADFBC91FC32CB7003AD18C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADFBC81FC32CB7003AD18C /* MenuViewController.swift */; };
+		2AADFBCB1FC3323B003AD18C /* MainViewControllerDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADFBCA1FC3323B003AD18C /* MainViewControllerDesign.swift */; };
+		2AADFBCD1FC3324C003AD18C /* MainViewControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADFBCC1FC3324C003AD18C /* MainViewControllerController.swift */; };
+		2AC7DEC01FCA6C7C00448A70 /* MoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC7DEBF1FCA6C7C00448A70 /* MoreView.xib */; };
+		2AC7DEC21FCA6FBA00448A70 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DEC11FCA6FBA00448A70 /* UITextViewPlaceholder.swift */; };
+		2AC7DEC41FCA744E00448A70 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DEC31FCA744E00448A70 /* MoreView.swift */; };
+		2AC7DEC71FCA747B00448A70 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DEC51FCA747B00448A70 /* MoreCell.swift */; };
+		2AC7DEC81FCA747B00448A70 /* MoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC7DEC61FCA747B00448A70 /* MoreCell.xib */; };
+		2AC7DECB1FCB048200448A70 /* MoreNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DEC91FCB048200448A70 /* MoreNoteCell.swift */; };
+		2AC7DECC1FCB048200448A70 /* MoreNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC7DECA1FCB048200448A70 /* MoreNoteCell.xib */; };
+		2AC7DECF1FCB04B700448A70 /* MoreAddPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DECD1FCB04B700448A70 /* MoreAddPointCell.swift */; };
+		2AC7DED01FCB04B700448A70 /* MoreAddPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC7DECE1FCB04B700448A70 /* MoreAddPointCell.xib */; };
+		2AF6FD471FC60AF400429E52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598D21F5FEE1E00D9B16A /* Info.plist */; };
+		2AF6FD4B1FC6232C00429E52 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF6FD4A1FC6232C00429E52 /* CalendarView.swift */; };
+		2AF6FD4D1FC6E44F00429E52 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF6FD4C1FC6E44F00429E52 /* CalendarView.xib */; };
+		2AF6FD521FC6EE0200429E52 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF6FD501FC6EE0200429E52 /* CalendarCell.swift */; };
+		2AF6FD531FC6EE0200429E52 /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF6FD511FC6EE0200429E52 /* CalendarCell.xib */; };
 		AC19DB6DE3AC33CEF72F09E2 /* Pods_Joyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +89,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A21C0211FC08CE5006BAAE4 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		2A12E5611FC9E2BC0004A9B9 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
+		2A12E5631FC9E2DC0004A9B9 /* GroupsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsView.xib; sourceTree = "<group>"; };
+		2A12E5651FC9E4E40004A9B9 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		2A12E5661FC9E4E40004A9B9 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		2A12E56F1FC9F2600004A9B9 /* AddNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationView.swift; sourceTree = "<group>"; };
+		2A12E5711FC9F27C0004A9B9 /* AddNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNotificationView.xib; sourceTree = "<group>"; };
 		2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDesign.swift; sourceTree = "<group>"; };
 		2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerController.swift; sourceTree = "<group>"; };
 		2A5E3F6B1FC0A895005F9401 /* FuturaPTBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaPTBold.otf; sourceTree = "<group>"; };
@@ -112,6 +139,22 @@
 		2AA598E81F5FEE1E00D9B16A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		2AA598F61F5FF06A00D9B16A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2AADFBC81FC32CB7003AD18C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2AADFBCA1FC3323B003AD18C /* MainViewControllerDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerDesign.swift; sourceTree = "<group>"; };
+		2AADFBCC1FC3324C003AD18C /* MainViewControllerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerController.swift; sourceTree = "<group>"; };
+		2AC7DEBF1FCA6C7C00448A70 /* MoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreView.xib; sourceTree = "<group>"; };
+		2AC7DEC11FCA6FBA00448A70 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
+		2AC7DEC31FCA744E00448A70 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		2AC7DEC51FCA747B00448A70 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
+		2AC7DEC61FCA747B00448A70 /* MoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCell.xib; sourceTree = "<group>"; };
+		2AC7DEC91FCB048200448A70 /* MoreNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreNoteCell.swift; sourceTree = "<group>"; };
+		2AC7DECA1FCB048200448A70 /* MoreNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreNoteCell.xib; sourceTree = "<group>"; };
+		2AC7DECD1FCB04B700448A70 /* MoreAddPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAddPointCell.swift; sourceTree = "<group>"; };
+		2AC7DECE1FCB04B700448A70 /* MoreAddPointCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreAddPointCell.xib; sourceTree = "<group>"; };
+		2AF6FD4A1FC6232C00429E52 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		2AF6FD4C1FC6E44F00429E52 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		2AF6FD501FC6EE0200429E52 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		2AF6FD511FC6EE0200429E52 /* CalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
 		745921079FDF0A401C0A51D3 /* Pods_Joyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A2A04B71AEA9B38B2E5B3F /* Pods-Joyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Joyle/Pods-Joyle.release.xcconfig"; sourceTree = "<group>"; };
 		AF313C7040F0B439EC5560A4 /* Pods-Joyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Joyle/Pods-Joyle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +186,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A12E5691FC9ECC20004A9B9 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				2A12E5661FC9E4E40004A9B9 /* GroupCell.xib */,
+				2A12E5631FC9E2DC0004A9B9 /* GroupsView.xib */,
+				2AF6FD511FC6EE0200429E52 /* CalendarCell.xib */,
+				2AF6FD4C1FC6E44F00429E52 /* CalendarView.xib */,
+				2A12E5711FC9F27C0004A9B9 /* AddNotificationView.xib */,
+				2AC7DEBF1FCA6C7C00448A70 /* MoreView.xib */,
+				2AC7DEC61FCA747B00448A70 /* MoreCell.xib */,
+				2AC7DECA1FCB048200448A70 /* MoreNoteCell.xib */,
+				2AC7DECE1FCB04B700448A70 /* MoreAddPointCell.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		2A12E56A1FC9ECD90004A9B9 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A12E5651FC9E4E40004A9B9 /* GroupCell.swift */,
+				2AF6FD501FC6EE0200429E52 /* CalendarCell.swift */,
+				2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */,
+				2AC7DEC51FCA747B00448A70 /* MoreCell.swift */,
+				2AC7DEC91FCB048200448A70 /* MoreNoteCell.swift */,
+				2AC7DECD1FCB04B700448A70 /* MoreAddPointCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		2A12E56C1FC9ED080004A9B9 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				2AA598F61F5FF06A00D9B16A /* Task.swift */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		2A12E56D1FC9ED2F0004A9B9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2A12E56F1FC9F2600004A9B9 /* AddNotificationView.swift */,
+				2A12E5611FC9E2BC0004A9B9 /* GroupsView.swift */,
+				2AA598C81F5FEE1E00D9B16A /* ViewController.swift */,
+				2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */,
+				2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */,
+				2AF6FD4A1FC6232C00429E52 /* CalendarView.swift */,
+				2AC7DEC31FCA744E00448A70 /* MoreView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2A12E56E1FC9ED430004A9B9 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2AADFBC81FC32CB7003AD18C /* MenuViewController.swift */,
+				2AADFBCA1FC3323B003AD18C /* MainViewControllerDesign.swift */,
+				2AADFBCC1FC3324C003AD18C /* MainViewControllerController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
 		2A5E3F6A1FC0A895005F9401 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,13 +306,13 @@
 		2AA598C51F5FEE1E00D9B16A /* Joyle */ = {
 			isa = PBXGroup;
 			children = (
+				2AC7DEC11FCA6FBA00448A70 /* UITextViewPlaceholder.swift */,
+				2A12E56E1FC9ED430004A9B9 /* MainViewController */,
+				2A12E56D1FC9ED2F0004A9B9 /* ViewController */,
+				2A12E56C1FC9ED080004A9B9 /* objects */,
+				2A12E56A1FC9ECD90004A9B9 /* cell */,
+				2A12E5691FC9ECC20004A9B9 /* xib */,
 				2AA598C61F5FEE1E00D9B16A /* AppDelegate.swift */,
-				2AA598C81F5FEE1E00D9B16A /* ViewController.swift */,
-				2A21C0251FC09F0D006BAAE4 /* ViewControllerController.swift */,
-				2A21C0231FC09A4E006BAAE4 /* ViewControllerDesign.swift */,
-				2AA598F61F5FF06A00D9B16A /* Task.swift */,
-				2AA598F41F5FEF6B00D9B16A /* TaskCell.swift */,
-				2A21C0211FC08CE5006BAAE4 /* GroupCell.swift */,
 				2AA598CA1F5FEE1E00D9B16A /* Main.storyboard */,
 				2AA598CF1F5FEE1E00D9B16A /* LaunchScreen.storyboard */,
 				2AA598CD1F5FEE1E00D9B16A /* Assets.xcassets */,
@@ -377,25 +481,35 @@
 				2A5E3F871FC0A896005F9401 /* FuturaPTBoldOblique.otf in Resources */,
 				2A5E3F931FC0A896005F9401 /* FuturaPTDemiOblique.otf in Resources */,
 				2A5E3F8A1FC0A896005F9401 /* FuturaPTCondBold.otf in Resources */,
+				2AF6FD531FC6EE0200429E52 /* CalendarCell.xib in Resources */,
 				2A5E3F991FC0A896005F9401 /* FuturaPTLightOblique.otf in Resources */,
 				2A5E3F8F1FC0A896005F9401 /* FuturaPTCondExtraBoldOblique.otf in Resources */,
 				2A5E3F8D1FC0A896005F9401 /* FuturaPTCondBookOblique.otf in Resources */,
+				2A12E5721FC9F27C0004A9B9 /* AddNotificationView.xib in Resources */,
 				2AA598CE1F5FEE1E00D9B16A /* Assets.xcassets in Resources */,
 				2A5E3F951FC0A896005F9401 /* FuturaPTExtraBoldOblique.otf in Resources */,
 				2A5E3F881FC0A896005F9401 /* FuturaPTBook.otf in Resources */,
 				2AA598CC1F5FEE1E00D9B16A /* Main.storyboard in Resources */,
 				2A5E3F981FC0A896005F9401 /* FuturaPTLight.otf in Resources */,
+				2AC7DECC1FCB048200448A70 /* MoreNoteCell.xib in Resources */,
 				2A5E3F9F1FC0A896005F9401 /* MuseoSansCyrl_2.otf in Resources */,
 				2A5E3F9B1FC0A896005F9401 /* FuturaPTMediumOblique.otf in Resources */,
 				2A5E3F911FC0A896005F9401 /* FuturaPTCondMediumOblique.otf in Resources */,
+				2AC7DEC01FCA6C7C00448A70 /* MoreView.xib in Resources */,
+				2AF6FD4D1FC6E44F00429E52 /* CalendarView.xib in Resources */,
 				2A5E3F941FC0A896005F9401 /* FuturaPTExtraBold.otf in Resources */,
 				2A5E3F961FC0A896005F9401 /* FuturaPTHeavy.otf in Resources */,
 				2A5E3FA01FC0A896005F9401 /* MuseoSansCyrl_3.otf in Resources */,
 				2A5E3F901FC0A896005F9401 /* FuturaPTCondMedium.otf in Resources */,
 				2A5E3F9A1FC0A896005F9401 /* FuturaPTMedium.otf in Resources */,
 				2A5E3F861FC0A896005F9401 /* FuturaPTBold.otf in Resources */,
+				2AC7DEC81FCA747B00448A70 /* MoreCell.xib in Resources */,
+				2A12E5641FC9E2DC0004A9B9 /* GroupsView.xib in Resources */,
+				2AC7DED01FCB04B700448A70 /* MoreAddPointCell.xib in Resources */,
 				2A5E3F9C1FC0A896005F9401 /* MuseoSansCyrl.otf in Resources */,
 				2A5E3F8C1FC0A896005F9401 /* FuturaPTCondBook.otf in Resources */,
+				2A12E5681FC9E4E40004A9B9 /* GroupCell.xib in Resources */,
+				2AF6FD471FC60AF400429E52 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,12 +583,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A21C0241FC09A4E006BAAE4 /* ViewControllerDesign.swift in Sources */,
-				2A21C0221FC08CE5006BAAE4 /* GroupCell.swift in Sources */,
+				2A12E5621FC9E2BC0004A9B9 /* GroupsView.swift in Sources */,
+				2AC7DECB1FCB048200448A70 /* MoreNoteCell.swift in Sources */,
+				2AF6FD4B1FC6232C00429E52 /* CalendarView.swift in Sources */,
 				2AA598F71F5FF06A00D9B16A /* Task.swift in Sources */,
+				2AC7DEC71FCA747B00448A70 /* MoreCell.swift in Sources */,
+				2AADFBCB1FC3323B003AD18C /* MainViewControllerDesign.swift in Sources */,
 				2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */,
+				2AC7DECF1FCB04B700448A70 /* MoreAddPointCell.swift in Sources */,
+				2AC7DEC21FCA6FBA00448A70 /* UITextViewPlaceholder.swift in Sources */,
+				2AC7DEC41FCA744E00448A70 /* MoreView.swift in Sources */,
 				2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */,
+				2A12E5701FC9F2600004A9B9 /* AddNotificationView.swift in Sources */,
+				2A12E5671FC9E4E40004A9B9 /* GroupCell.swift in Sources */,
+				2AF6FD521FC6EE0200429E52 /* CalendarCell.swift in Sources */,
 				2AA598C71F5FEE1E00D9B16A /* AppDelegate.swift in Sources */,
 				2A21C0261FC09F0D006BAAE4 /* ViewControllerController.swift in Sources */,
+				2AADFBC91FC32CB7003AD18C /* MenuViewController.swift in Sources */,
+				2AADFBCD1FC3324C003AD18C /* MainViewControllerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

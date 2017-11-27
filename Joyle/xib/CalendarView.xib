@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MuseoSansCyrl_0.otf">
+            <string>MuseoSansCyrl-300</string>
+        </array>
+        <array key="MuseoSansCyrl_1.otf">
+            <string>MuseoSansCyrl-500</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarView" customModule="Joyle" customModuleProvider="target">
+            <connections>
+                <outlet property="addNotificationButton" destination="O8b-7J-p1b" id="5st-ea-F2z"/>
+                <outlet property="cV" destination="vn8-Su-kaM" id="uUi-W1-b4r"/>
+                <outlet property="calendarView" destination="iN0-l3-epB" id="AUE-ZX-8G8"/>
+                <outlet property="daysView" destination="9ON-mT-VRJ" id="Jdu-Jp-2GP"/>
+                <outlet property="nextWeekButton" destination="z5a-dc-nVZ" id="msS-Iq-F5A"/>
+                <outlet property="todayButton" destination="ElA-qg-Qvj" id="djf-uH-RRY"/>
+                <outlet property="tomorrowButton" destination="ynf-7S-WPt" id="Eci-oo-USf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начать работу по системе" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTU-jy-Znb">
+                    <rect key="frame" x="20" y="40" width="198.5" height="19"/>
+                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="назначить дату:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGV-YY-sUl">
+                    <rect key="frame" x="20" y="67" width="89.5" height="14"/>
+                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="12"/>
+                    <color key="textColor" red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-qg-Qvj">
+                    <rect key="frame" x="20" y="102" width="71" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="609-c2-U4z"/>
+                        <constraint firstAttribute="width" constant="71" id="tFL-qw-IEe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="14"/>
+                    <state key="normal" title="Сегодня">
+                        <color key="titleColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressButtonWithSender:" destination="-1" eventType="touchUpInside" id="ZTF-d9-MIz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-7S-WPt">
+                    <rect key="frame" x="96" y="102" width="60" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="tmm-kH-idL"/>
+                        <constraint firstAttribute="width" constant="60" id="xcb-ka-uK1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="14"/>
+                    <state key="normal" title="Завтра">
+                        <color key="titleColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressButtonWithSender:" destination="-1" eventType="touchUpInside" id="2Vr-mJ-Ecw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5a-dc-nVZ">
+                    <rect key="frame" x="161" y="102" width="102" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="JHO-yH-Cr5"/>
+                        <constraint firstAttribute="height" constant="32" id="hsh-S0-Ws6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="14"/>
+                    <state key="normal" title="След. неделя">
+                        <color key="titleColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressButtonWithSender:" destination="-1" eventType="touchUpInside" id="duW-Ci-6FO"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qIW-F1-GSO">
+                    <rect key="frame" x="20" y="154" width="280" height="228"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-AZ-7bV">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="17"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv5-aj-10S">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вт" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0M-SZ-AtI">
+                                    <rect key="frame" x="40" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ср" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJZ-ub-cvC">
+                                    <rect key="frame" x="80" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чт" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ry-kb-b4d">
+                                    <rect key="frame" x="120" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пт" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bZ-Ry-OeG">
+                                    <rect key="frame" x="160" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сб" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cm8-cg-nBL">
+                                    <rect key="frame" x="200" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7V-bP-Cc4">
+                                    <rect key="frame" x="240" y="0.0" width="40" height="17"/>
+                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                    <color key="textColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="XVZ-pn-cDy"/>
+                            </constraints>
+                        </stackView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vn8-Su-kaM" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                            <rect key="frame" x="0.0" y="17" width="280" height="211"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F1D-CO-QA5">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="vn8-Su-kaM" firstAttribute="top" secondItem="AtQ-AZ-7bV" secondAttribute="bottom" id="0Ht-Da-ilu"/>
+                        <constraint firstAttribute="bottom" secondItem="vn8-Su-kaM" secondAttribute="bottom" id="Dtn-c0-nzH"/>
+                        <constraint firstItem="vn8-Su-kaM" firstAttribute="leading" secondItem="qIW-F1-GSO" secondAttribute="leading" id="Gmh-g8-vud"/>
+                        <constraint firstItem="AtQ-AZ-7bV" firstAttribute="top" secondItem="qIW-F1-GSO" secondAttribute="top" id="Jtb-vE-Arl"/>
+                        <constraint firstAttribute="trailing" secondItem="AtQ-AZ-7bV" secondAttribute="trailing" id="aFq-vY-cAE"/>
+                        <constraint firstAttribute="trailing" secondItem="vn8-Su-kaM" secondAttribute="trailing" id="fYr-JT-iAa"/>
+                        <constraint firstItem="AtQ-AZ-7bV" firstAttribute="leading" secondItem="qIW-F1-GSO" secondAttribute="leading" id="vfq-YX-qpo"/>
+                        <constraint firstItem="vn8-Su-kaM" firstAttribute="top" secondItem="AtQ-AZ-7bV" secondAttribute="bottom" id="vjo-R2-5mZ"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-7J-p1b">
+                    <rect key="frame" x="20" y="392" width="280" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="opr-S7-APA"/>
+                    </constraints>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="повторять задачу:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mn-lX-XTz">
+                    <rect key="frame" x="20" y="434" width="103" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Jil-HR-fp3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="12"/>
+                    <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxw-lV-UTD">
+                    <rect key="frame" x="70" y="395" width="180" height="26"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добавить напоминание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-Kc-9Qx">
+                            <rect key="frame" x="23" y="3" width="157" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="14"/>
+                            <color key="textColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notification_grey" translatesAutoresizingMaskIntoConstraints="NO" id="fF6-0J-E3d">
+                            <rect key="frame" x="0.0" y="5" width="13" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ON-mT-VRJ">
+                    <rect key="frame" x="20" y="454" width="280" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="z5a-dc-nVZ" firstAttribute="leading" secondItem="ynf-7S-WPt" secondAttribute="trailing" constant="5" id="1mR-z2-rFR"/>
+                <constraint firstItem="qIW-F1-GSO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="3QC-cc-xmm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9ON-mT-VRJ" secondAttribute="bottom" constant="24" id="7Do-uC-5T6"/>
+                <constraint firstItem="ZGV-YY-sUl" firstAttribute="top" secondItem="RTU-jy-Znb" secondAttribute="bottom" constant="8" id="7e9-d8-4iN"/>
+                <constraint firstItem="9ON-mT-VRJ" firstAttribute="top" secondItem="2Mn-lX-XTz" secondAttribute="bottom" constant="6" id="Bh6-AD-fWd"/>
+                <constraint firstItem="O8b-7J-p1b" firstAttribute="centerY" secondItem="hxw-lV-UTD" secondAttribute="centerY" id="CPS-nD-Gv9"/>
+                <constraint firstItem="2Mn-lX-XTz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="EWv-2w-qeI"/>
+                <constraint firstItem="O8b-7J-p1b" firstAttribute="trailing" secondItem="9ON-mT-VRJ" secondAttribute="trailing" id="HsW-Mi-Npb"/>
+                <constraint firstItem="ynf-7S-WPt" firstAttribute="leading" secondItem="ElA-qg-Qvj" secondAttribute="trailing" constant="5" id="Oa1-H8-5e7"/>
+                <constraint firstItem="RTU-jy-Znb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Rbt-Ro-Zgd"/>
+                <constraint firstItem="ElA-qg-Qvj" firstAttribute="top" secondItem="ZGV-YY-sUl" secondAttribute="bottom" constant="21" id="Rwt-Y0-kaQ"/>
+                <constraint firstItem="O8b-7J-p1b" firstAttribute="top" secondItem="qIW-F1-GSO" secondAttribute="bottom" constant="10" id="U3d-CD-LX0"/>
+                <constraint firstItem="ZGV-YY-sUl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="X4q-83-VFZ"/>
+                <constraint firstItem="2Mn-lX-XTz" firstAttribute="top" secondItem="O8b-7J-p1b" secondAttribute="bottom" constant="10" id="XcU-wJ-YSI"/>
+                <constraint firstItem="O8b-7J-p1b" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="XxV-ae-m3W"/>
+                <constraint firstItem="ynf-7S-WPt" firstAttribute="top" secondItem="ZGV-YY-sUl" secondAttribute="bottom" constant="21" id="YGv-Nd-MJf"/>
+                <constraint firstItem="2Mn-lX-XTz" firstAttribute="leading" secondItem="9ON-mT-VRJ" secondAttribute="leading" id="YZT-pQ-Hpz"/>
+                <constraint firstItem="hxw-lV-UTD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="70" id="aWw-sK-8Nc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="O8b-7J-p1b" secondAttribute="trailing" constant="20" id="ajx-ZH-2Sm"/>
+                <constraint firstItem="2Mn-lX-XTz" firstAttribute="top" secondItem="O8b-7J-p1b" secondAttribute="bottom" constant="10" id="bT4-BA-aXy"/>
+                <constraint firstItem="O8b-7J-p1b" firstAttribute="top" secondItem="qIW-F1-GSO" secondAttribute="bottom" constant="10" id="ePQ-hP-3kU"/>
+                <constraint firstItem="qIW-F1-GSO" firstAttribute="top" secondItem="z5a-dc-nVZ" secondAttribute="bottom" constant="20" id="efN-y1-15J"/>
+                <constraint firstItem="hxw-lV-UTD" firstAttribute="top" secondItem="qIW-F1-GSO" secondAttribute="bottom" constant="13" id="erE-Gz-Euc"/>
+                <constraint firstItem="ElA-qg-Qvj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fvY-7R-97m"/>
+                <constraint firstAttribute="bottom" secondItem="2Mn-lX-XTz" secondAttribute="bottom" constant="60" id="kdi-m6-dNk"/>
+                <constraint firstItem="qIW-F1-GSO" firstAttribute="top" secondItem="ynf-7S-WPt" secondAttribute="bottom" constant="20" id="mIG-IS-adX"/>
+                <constraint firstItem="z5a-dc-nVZ" firstAttribute="leading" secondItem="ynf-7S-WPt" secondAttribute="trailing" constant="5" id="p9p-DH-vKa"/>
+                <constraint firstItem="ynf-7S-WPt" firstAttribute="leading" secondItem="ElA-qg-Qvj" secondAttribute="trailing" constant="5" id="pgB-mb-9DG"/>
+                <constraint firstItem="O8b-7J-p1b" firstAttribute="centerX" secondItem="hxw-lV-UTD" secondAttribute="centerX" id="qDl-g7-FtJ"/>
+                <constraint firstItem="qIW-F1-GSO" firstAttribute="centerX" secondItem="hxw-lV-UTD" secondAttribute="centerX" id="quy-vR-N0d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qIW-F1-GSO" secondAttribute="trailing" constant="20" id="rBF-GY-Xfg"/>
+                <constraint firstItem="qIW-F1-GSO" firstAttribute="top" secondItem="ElA-qg-Qvj" secondAttribute="bottom" constant="20" id="rRt-rT-BA1"/>
+                <constraint firstItem="RTU-jy-Znb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="tkK-iP-9gB"/>
+                <constraint firstItem="ZGV-YY-sUl" firstAttribute="top" secondItem="RTU-jy-Znb" secondAttribute="bottom" constant="8" id="w0N-w0-kUs"/>
+                <constraint firstItem="qIW-F1-GSO" firstAttribute="top" secondItem="ElA-qg-Qvj" secondAttribute="bottom" constant="20" id="xp4-Q8-Yyd"/>
+                <constraint firstItem="9ON-mT-VRJ" firstAttribute="centerX" secondItem="hxw-lV-UTD" secondAttribute="centerX" id="yMC-14-nRK"/>
+                <constraint firstItem="z5a-dc-nVZ" firstAttribute="top" secondItem="RTU-jy-Znb" secondAttribute="bottom" constant="43.5" id="zZG-Fn-Bkz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="12" y="56"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="notification_grey" width="13" height="16"/>
+    </resources>
+</document>
