@@ -38,6 +38,7 @@ class ViewController: UIViewController{
     @IBOutlet var secondBlackView: UIView!
     @IBOutlet var moreView: UIView!
     
+    @IBOutlet var more_titleView: UIView!
     @IBOutlet var more_checkButton: UIButton!
     @IBOutlet var more_header: UILabel!
     @IBOutlet var more_note: UITextViewPlaceholder!
@@ -50,6 +51,7 @@ class ViewController: UIViewController{
     @IBOutlet var more_messageButton: UIButton!
     @IBOutlet var more_scrollView: UIScrollView!
     @IBOutlet var more_iconsView: UIView!
+    @IBOutlet var more_dismissKeyboardButton: UIButton!
     
     
     let rectView: UIView = UIView()
@@ -57,7 +59,13 @@ class ViewController: UIViewController{
     var currentCell: TaskCell!
     var dragView: UIView!
     var borderSublayer: CAShapeLayer!
-    var isNotificationOpen: Bool = false
+    
+    let bottomMargin: CGFloat = 60.0
+    let scrollBottomMargin: CGFloat = 47.0
+    let iconsViewY_fromBottom: CGFloat = 37.0
+    let topMargin: CGFloat = 20.0
+    
+    var isViewOpen: Int = 0 // 1 - calendar; 2 - notification; 3 - more; 4 - replace
     
     //CONTROLLER
     
@@ -140,16 +148,49 @@ class ViewController: UIViewController{
         more_calendarButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10.0)
         more_note.isScrollEnabled = false
         more_note.placeholder = "Добавить заметку"
-        more_scrollView.contentSize.height = 500.0
         let customView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
         customView.backgroundColor = UIColor.white
+        customView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        customView.layer.shadowOpacity = 0.05
+        customView.layer.shadowOffset = CGSize(width: 0, height: -1)
+        customView.layer.shadowRadius = 5
         let more_calendarButton_copy = UIButton(frame: CGRect(x: 5, y: 6, width: 135, height: 32))
         more_calendarButton_copy.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
-        more_calendarButton_copy.setImage(UIImage(named: "calendar_grey"), for: .normal)
+        more_calendarButton_copy.setImage(UIImage(named: "calendar_gray"), for: .normal)
         more_calendarButton_copy.setTitle("Пн. 12 октября", for: .normal)
+        more_calendarButton_copy.titleLabel?.font = UIFont(name: "MuseoSansCyrl-300", size: 14)
+        more_calendarButton_copy.setTitleColor(UIColor(red: 177/255.0, green: 177/255.0, blue: 177/255.0, alpha: 1.0), for: .normal)
+        more_calendarButton_copy.layer.shadowOpacity = 0.0
         customView.addSubview(more_calendarButton_copy)
+        let more_notificationButton_copy = UIButton(frame: CGRect(x: 145, y: 6, width: 32, height: 32))
+        more_notificationButton_copy.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_notificationButton_copy.setImage(UIImage(named: "notification_grey"), for: .normal)
+        customView.addSubview(more_notificationButton_copy)
+        let more_tagButton_copy = UIButton(frame: CGRect(x: 182, y: 6, width: 32, height: 32))
+        more_tagButton_copy.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_tagButton_copy.setImage(UIImage(named: "tag_gray"), for: .normal)
+        customView.addSubview(more_tagButton_copy)
+        let more_listButton_copy = UIButton(frame: CGRect(x: 219, y: 6, width: 32, height: 32))
+        more_listButton_copy.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_listButton_copy.setImage(UIImage(named: "list_gray"), for: .normal)
+        customView.addSubview(more_listButton_copy)
+        /*let more_messageButton_copy = UIButton(frame: CGRect(x: 256, y: 6, width: 32, height: 32))
+        more_messageButton_copy.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_messageButton_copy.setImage(UIImage(named: "message_gray"), for: .normal)
+        customView.addSubview(more_messageButton_copy)*/
+        let more_dismissKeyboardButton_copy = UIButton(frame: CGRect(x: 283, y: 6, width: 32, height: 32))
+        more_dismissKeyboardButton_copy.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_dismissKeyboardButton_copy.setTitle("K", for: .normal)
+        more_dismissKeyboardButton_copy.setTitleColor(.black, for: .normal)
+        more_dismissKeyboardButton_copy.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+        customView.addSubview(more_dismissKeyboardButton_copy)
         more_note.inputAccessoryView = customView
         more_note.inputAccessoryView?.isHidden = true
+        
+        more_dismissKeyboardButton.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongGesture(_:)))
         cV.addGestureRecognizer(longPressGesture)
@@ -177,19 +218,104 @@ class ViewController: UIViewController{
         }
     }
     
-    @IBAction func closeGroupView(){
-        closeGroupsView()
+    @IBAction func closeView(){
+        
+        switch (isViewOpen){
+        case 1: closeCalendarView()
+                break
+        case 2: closeNotificationView()
+                break
+        case 3: closeMoreView()
+                break
+        case 4: closeGroupsView()
+                break
+        default: break
+        }
+        
+        isViewOpen = 0
+        
     }
     
-    @IBAction func pressCloseCalendarView(){
-        if (!isNotificationOpen){
-            closeCalendarView()
+    func closeMoreView(){
+        
+        moreView.isHidden = true
+        changeButton(toRed: false)
+        cvTasks[moreView.tag].note = more_note.text
+        
+    }
+    
+    func openMoreView(indexPath: IndexPath, collectionView: UICollectionView){
+        isViewOpen = 3
+        cV.contentOffset = CGPoint(x: 0, y: 0)
+        more_note.text = cvTasks[indexPath.row].note
+        let cell = collectionView.cellForItem(at: indexPath) as? TaskCell
+        let rect = cell?.frame
+        let cellFrameInSuperview: CGRect! = cV.convert(rect!, to: cV.superview)
+        var targetY = cellFrameInSuperview.origin.y
+        if (cellFrameInSuperview.origin.y > (self.view.frame.size.height - bottomMargin - moreView.frame.size.height)){
+            targetY = self.view.frame.size.height - bottomMargin - moreView.frame.size.height
+            let currentY = cellFrameInSuperview.origin.y
+            cV.contentOffset = CGPoint(x: 0, y: currentY - targetY)
+        }
+        moreView.frame.origin.y = targetY
+        moreView.frame.size.height = 131.0
+        more_scrollView.frame.size.height = 53.0
+        more_iconsView.frame.origin.y = 94.0
+        fitMoreView()
+        moreView.isHidden = false
+        moreView.tag = indexPath.row
+        changeButton(toRed: true)
+    }
+    
+    func keyBoardWillShow(notification: NSNotification) {
+        if ((moreView.frame.origin.y + moreView.frame.size.height) > (568 - 250)){
+            cV?.contentOffset.y += ((moreView.frame.origin.y + moreView.frame.size.height) - (568 - 250))
+            moreView.frame.origin.y -= ((moreView.frame.origin.y + moreView.frame.size.height) - (568 - 260))
         }
     }
     
-    @IBAction func pressCloseNotificationView(){
-        closeNotificationView()
-        isNotificationOpen = false
+    func keyBoardWillHide(notification: NSNotification) {
+        fitMoreView()
+    }
+    
+    func fitMoreView(){
+        more_scrollView.contentOffset.y = 0
+        var isMoreThanScreen = false
+        let scrollHeight_fromY_toBottom = self.view.frame.size.height - (bottomMargin + scrollBottomMargin) - (moreView.frame.origin.y + more_scrollView.frame.origin.y)
+        if (more_scrollView.contentSize.height > scrollHeight_fromY_toBottom){
+            let diff = more_scrollView.contentSize.height - scrollHeight_fromY_toBottom
+            if (moreView.frame.origin.y - diff < topMargin){
+                moreView.frame.origin.y = topMargin
+                moreView.layer.shadowOpacity = 0.0
+                isMoreThanScreen = true
+            }
+            else{
+                moreView.frame.origin.y -= diff
+            }
+        }
+        downMoreView(isMore: isMoreThanScreen)
+    }
+    
+    func downMoreView(isMore: Bool){
+        
+        if (more_scrollView.contentSize.height < more_note.frame.size.height){
+            more_scrollView.contentSize.height = more_note.frame.size.height
+        }
+        
+        if (isMore){
+            moreView.frame.size.height = self.view.frame.size.height - bottomMargin - moreView.frame.origin.y
+            more_scrollView.frame.size.height = moreView.frame.size.height - more_scrollView.frame.origin.y - scrollBottomMargin
+            more_iconsView.frame.origin.y = moreView.frame.size.height - iconsViewY_fromBottom
+        }
+        else{
+            moreView.frame.size.height = more_scrollView.frame.origin.y + more_scrollView.contentSize.height + scrollBottomMargin
+            more_scrollView.frame.size.height = more_scrollView.contentSize.height
+            more_iconsView.frame.origin.y = moreView.frame.size.height - iconsViewY_fromBottom
+        }
+    }
+    
+    func dismissKeyboard(){
+        more_note.resignFirstResponder()
     }
     
 }
@@ -279,18 +405,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             else if (cvTasks[indexPath.row].isOpen){
                 closeTask(indexPath: indexPath)
             }*/
-        cV.contentOffset = CGPoint(x: 0, y: 0)
-        let cell = collectionView.cellForItem(at: indexPath) as? TaskCell
-        let rect = cell?.frame
-        let cellFrameInSuperview: CGRect! = cV.convert(rect!, to: cV.superview)
-        var targetY = cellFrameInSuperview.origin.y
-        if (cellFrameInSuperview.origin.y > (self.view.frame.size.height - 60.0 - moreView.frame.size.height)){
-            targetY = self.view.frame.size.height - 60.0 - moreView.frame.size.height
-            let currentY = cellFrameInSuperview.origin.y
-            cV.contentOffset = CGPoint(x: 0, y: currentY - targetY)
-        }
-        moreView.frame.origin.y = targetY
-        moreView.isHidden = false
+        openMoreView(indexPath: indexPath, collectionView: collectionView)
         
     }
     
@@ -372,12 +487,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if (cV.contentOffset.y > 0){
-            underTopView.layer.shadowOpacity = 0.06
+        if (scrollView == cV){
+            if (cV.contentOffset.y > 0){
+                underTopView.layer.shadowOpacity = 0.06
+            }
+            else{
+                underTopView.layer.shadowOpacity = 0.0
+            }
         }
-        else{
-            underTopView.layer.shadowOpacity = 0.0
+        else if (scrollView == more_scrollView){
+            if (more_scrollView.contentOffset.y > 0){
+                more_titleView.layer.shadowOpacity = 0.06
+            }
+            else{
+                more_titleView.layer.shadowOpacity = 0.0
+            }
         }
+        
         
     }
     

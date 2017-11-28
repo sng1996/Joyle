@@ -525,9 +525,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.74901960784313726" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="closeGroupView" destination="BYZ-38-t0r" eventType="touchUpInside" id="F9t-06-ato"/>
-                                    <action selector="pressCloseCalendarView" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYi-EE-b05"/>
-                                    <action selector="pressCloseNotificationView" destination="BYZ-38-t0r" eventType="touchUpInside" id="znF-qT-t5A"/>
+                                    <action selector="closeView" destination="BYZ-38-t0r" eventType="touchUpInside" id="9mo-ER-i8n"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="mQh-14-WM4">
@@ -552,18 +550,25 @@
                                 <rect key="frame" x="0.0" y="45" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQo-gC-50a">
-                                        <rect key="frame" x="20" y="15" width="14" height="14"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhp-ei-odp">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.94975291709999998" blue="0.97445415170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Придумать прототип страницы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="752-Eo-QRX">
-                                        <rect key="frame" x="44" y="12" width="256" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQo-gC-50a">
+                                                <rect key="frame" x="20" y="15" width="14" height="14"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.94975291709999998" blue="0.97445415170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Придумать прототип страницы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="752-Eo-QRX">
+                                                <rect key="frame" x="44" y="12" width="256" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nk5-SA-d6a">
                                         <rect key="frame" x="20" y="41" width="280" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -631,11 +636,13 @@
                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="list_gray"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-R5-nU2">
-                                                <rect key="frame" x="256" y="0.0" width="32" height="32"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epD-TR-HSF">
+                                                <rect key="frame" x="283" y="0.0" width="32" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="message_gray"/>
+                                                <state key="normal" title="K">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2F-d9-jOZ">
                                                 <rect key="frame" x="145" y="0.0" width="32" height="32"/>
@@ -683,16 +690,17 @@
                         <outlet property="moreView" destination="067-Pb-MrI" id="j5A-mx-hcR"/>
                         <outlet property="more_calendarButton" destination="csY-TI-XGV" id="tk6-Pq-PlS"/>
                         <outlet property="more_checkButton" destination="hQo-gC-50a" id="XdW-xo-gGv"/>
+                        <outlet property="more_dismissKeyboardButton" destination="epD-TR-HSF" id="9Rk-dm-JJp"/>
                         <outlet property="more_header" destination="752-Eo-QRX" id="ixT-e8-MI7"/>
                         <outlet property="more_iconsView" destination="EMk-Br-64c" id="Zvm-B7-zJ4"/>
                         <outlet property="more_listButton" destination="CWm-iX-aZr" id="WtG-U0-53R"/>
-                        <outlet property="more_messageButton" destination="1Oz-R5-nU2" id="VBD-bT-MmR"/>
                         <outlet property="more_note" destination="5uT-V7-YsV" id="ANl-rU-DPb"/>
                         <outlet property="more_notificationButton" destination="Q2F-d9-jOZ" id="tyZ-Im-H3b"/>
                         <outlet property="more_scrollView" destination="nk5-SA-d6a" id="Rde-9Q-iQB"/>
                         <outlet property="more_tV" destination="F4W-JL-Gnr" id="U5O-fF-grn"/>
                         <outlet property="more_tagButton" destination="4vK-Hc-lqe" id="pUS-GI-gkL"/>
                         <outlet property="more_tagsView" destination="6ga-3l-QmD" id="2PL-9a-aPm"/>
+                        <outlet property="more_titleView" destination="Rhp-ei-odp" id="IIl-xq-L9B"/>
                         <outlet property="ok" destination="rBH-vb-RYJ" id="JZI-QP-sa5"/>
                         <outlet property="replaceView" destination="gnu-de-ITI" id="tKG-Oa-Szh"/>
                         <outlet property="rightButton_image" destination="mQh-14-WM4" id="yuq-3r-k5O"/>
@@ -717,7 +725,6 @@
         <image name="inbox" width="12" height="12"/>
         <image name="kolokol" width="12" height="15"/>
         <image name="list_gray" width="20" height="15"/>
-        <image name="message_gray" width="17" height="16"/>
         <image name="notes" width="12" height="16"/>
         <image name="notification_grey" width="13" height="16"/>
         <image name="options" width="16" height="4"/>

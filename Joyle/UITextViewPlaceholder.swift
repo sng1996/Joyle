@@ -57,13 +57,19 @@ class UITextViewPlaceholder: UITextView, UITextViewDelegate {
         view.subviews[2].frame.origin.y -= heightDifference
         view.frame.size.height -= heightDifference
         view.superview!.frame.size.height -= heightDifference
-        view.superview!.subviews[3].frame.origin.y -= heightDifference
+        view.superview!.subviews[2].frame.origin.y -= heightDifference
         let cV = view.superview!.superview!.subviews[0] as? UICollectionView
-        if ((view.superview!.frame.origin.y + view.superview!.frame.size.height) > (568 - 260)){
+        if ((view.superview!.frame.origin.y + view.superview!.frame.size.height) > (568 - 250)){
             textView.inputAccessoryView?.isHidden = false
             textView.reloadInputViews()
             cV?.contentOffset.y += heightDifference
             view.superview!.frame.origin.y += heightDifference
+        }
+        if (view.superview!.frame.origin.y < 20){
+            view.superview!.frame.origin.y = 20
+            view.superview!.layer.shadowOpacity = 0.0
+            let scrollView = view as! UIScrollView
+            scrollView.contentOffset.y -= heightDifference
         }
     }
     

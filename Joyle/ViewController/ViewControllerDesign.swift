@@ -146,6 +146,7 @@ extension ViewController{
     }
     
     func closeGroupsView(){
+        isViewOpen = 4
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
             self.groupsView.frame.origin = CGPoint(x: 0, y: -(self.groupsView.frame.size.height) - 50.0)
         }, completion: { finished in
@@ -175,6 +176,7 @@ extension ViewController{
     
     func openCalendarView(){
         
+        isViewOpen = 1
         calendarView.cV.reloadData()
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
             self.calendarView.frame.origin = CGPoint(x: 0, y: 0)
@@ -195,13 +197,13 @@ extension ViewController{
     }
     
     func openNotificationView(){
+        isViewOpen = 2
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
             self.addNotificationView.frame.origin = CGPoint(x: 20, y: 140)
         }, completion: { finished in
         })
         secondBlackView.isHidden = false
         changeButton(toRed: true)
-        isNotificationOpen = true
         
     }
     
