@@ -53,24 +53,90 @@ class UITextViewPlaceholder: UITextView, UITextViewDelegate {
     }
     
     func updateParentView(heightDifference: CGFloat, view: UIView, textView: UITextView) {
-        view.subviews[1].frame.origin.y -= heightDifference
-        view.subviews[2].frame.origin.y -= heightDifference
-        view.frame.size.height -= heightDifference
-        view.superview!.frame.size.height -= heightDifference
-        view.superview!.subviews[2].frame.origin.y -= heightDifference
-        let cV = view.superview!.superview!.subviews[0] as? UICollectionView
-        if ((view.superview!.frame.origin.y + view.superview!.frame.size.height) > (568 - 250)){
+        
+        new_updateMoreView(heightDifference: heightDifference, view: view, textView: textView)
+        
+    }
+    
+    func new_updateMoreView(heightDifference: CGFloat, view: UIView, textView: UITextView){
+        let scrollView = view as! UIScrollView
+        moveObjectsInsideScrollView(heightDifference: heightDifference, view: view, textView: textView)
+        if (isFitBetweenYAndKeyboard(heightDifference: heightDifference, view: view, textView: textView)){
+            scrollView.frame.size.height = scrollView.contentSize.height
+            moveObjectsInsideMoreView(heightDifference: heightDifference, view: view, textView: textView)
+            textView.inputAccessoryView?.isHidden = true
+            textView.reloadInputViews()
+        }
+        else if(isFitBetweenTopAndKeyboard(heightDifference: heightDifference, view: view, textView: textView)){
+            let inputView: CGFloat = 44.0
+            let keyboardY = (view.superview?.superview?.frame.size.height)! - CGFloat(textView.tag) - inputView
+            scrollView.frame.size.height = scrollView.contentSize.height
+            moveObjectsInsideMoreView(heightDifference: heightDifference, view: view, textView: textView)
+            view.superview?.frame.origin.y = keyboardY - ((view.superview?.frame.size.height)! - (view.superview?.subviews[2].frame.size.height)!)
             textView.inputAccessoryView?.isHidden = false
             textView.reloadInputViews()
-            cV?.contentOffset.y += heightDifference
-            view.superview!.frame.origin.y += heightDifference
         }
-        if (view.superview!.frame.origin.y < 20){
-            view.superview!.frame.origin.y = 20
-            view.superview!.layer.shadowOpacity = 0.0
-            let scrollView = view as! UIScrollView
-            scrollView.contentOffset.y -= heightDifference
+        else{
+            let gap: CGFloat = 5.0
+            let inputView: CGFloat = 44.0
+            scrollView.frame.size.height = (view.superview?.superview?.frame.size.height)! - CGFloat(textView.tag) - inputView - gap - 20.0 - scrollView.frame.origin.y
+            moveObjectsInsideMoreView(heightDifference: heightDifference, view: view, textView: textView)
+            view.superview?.frame.origin.y = 20.0
+            textView.inputAccessoryView?.isHidden = false
+            textView.reloadInputViews()
         }
+        
+    }
+    
+    func realHeight(heightDifference: CGFloat, view: UIView, textView: UITextView) -> CGFloat{
+        
+        let gap: CGFloat = 5.0
+        let scrollView = view as! UIScrollView
+        if (scrollView.contentSize.height < 35.0){
+            scrollView.contentSize.height = 35.0
+        }
+        
+        let moreViewH = (view.superview?.subviews[0].frame.size.height)! + gap + scrollView.contentSize.height + 2*gap + (view.superview?.subviews[2].frame.size.height)!
+        return moreViewH
+        
+    }
+    
+    func moveObjectsInsideScrollView(heightDifference: CGFloat, view: UIView, textView: UITextView){
+        
+        let gap: CGFloat = 5.0
+        view.subviews[1].frame.origin.y = view.subviews[0].frame.origin.y + view.subviews[0].frame.size.height - heightDifference + gap //tagsView
+        view.subviews[2].frame.origin.y = view.subviews[1].frame.origin.y + view.subviews[1].frame.size.height + gap// tV
+        let scrollView = view as! UIScrollView
+        scrollView.contentSize.height = view.subviews[0].frame.size.height - heightDifference + gap + view.subviews[1].frame.size.height + gap + view.subviews[2].frame.size.height + 2*gap //scrollView
+        
+    }
+    
+    func moveObjectsInsideMoreView(heightDifference: CGFloat, view: UIView, textView: UITextView){
+        
+        let gap: CGFloat = 5.0
+        let scrollView = view as! UIScrollView
+        scrollView.frame.origin.y = (view.superview?.subviews[0].frame.origin.y)! + (view.superview?.subviews[0].frame.size.height)! + gap
+        view.superview?.subviews[2].frame.origin.y = scrollView.frame.origin.y + scrollView.frame.size.height + 2*gap
+        view.superview?.frame.size.height = (view.superview?.subviews[2].frame.origin.y)! + (view.superview?.subviews[2].frame.size.height)!
+        
+    }
+    
+    func isFitBetweenYAndKeyboard(heightDifference: CGFloat, view: UIView, textView: UITextView) -> Bool{
+        
+        let realH: CGFloat = realHeight(heightDifference: heightDifference, view: view, textView: textView)
+        let gap = (view.superview?.superview?.frame.size.height)! - CGFloat(textView.tag) - 5.0 - (view.superview?.frame.origin.y)!
+        return (gap > realH)
+    }
+    
+    func isFitBetweenTopAndKeyboard(heightDifference: CGFloat, view: UIView, textView: UITextView) -> Bool{
+
+        let realH: CGFloat = realHeight(heightDifference: heightDifference, view: view, textView: textView)
+        
+        let gap = (view.superview?.superview?.frame.size.height)! - CGFloat(textView.tag) - 5.0 - 20.0
+        if (heightDifference > 0){
+            return (gap > realH)
+        }
+        return ((view.superview?.frame.origin.y)! > CGFloat(20.0))
     }
     
     private func resizePlaceholder() {

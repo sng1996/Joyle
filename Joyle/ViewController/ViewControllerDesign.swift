@@ -254,6 +254,112 @@ extension ViewController{
         groupsView.tV.register(groupsCellNib, forCellReuseIdentifier: "groupCell")
     }
     
+    func createCustomView(){
+        
+        customView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
+        customView.backgroundColor = UIColor.white
+        customView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        customView.layer.shadowOpacity = 0.05
+        customView.layer.shadowOffset = CGSize(width: 0, height: -1)
+        customView.layer.shadowRadius = 5
+        
+        let scrollView = UIScrollView(frame: CGRect(x: 20, y: 0, width:236, height: 44))
+        customView.addSubview(scrollView)
+        
+        let leftView = UIView(frame: CGRect(x: 0, y: 6, width:20, height: 32))
+        leftView.backgroundColor = .white
+        leftView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        leftView.layer.shadowOpacity = 0.15
+        leftView.layer.shadowRadius = 5
+        leftView.layer.shadowOffset = CGSize(width: 1, height: 0)
+        customView.addSubview(leftView)
+        
+        let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width:20, height: 44))
+        leftButton.setImage(UIImage(named: "leftArrow"), for: .normal)
+        leftButton.backgroundColor = .white
+        customView.addSubview(leftButton)
+        
+        more_leftView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        more_leftView.layer.shadowOpacity = 0.15
+        more_leftView.layer.shadowRadius = 5
+        more_leftView.layer.shadowOffset = CGSize(width: 1, height: 0)
+        
+        let rightView = UIView(frame: CGRect(x: 256, y: 6, width:20, height: 32))
+        rightView.backgroundColor = .white
+        rightView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        rightView.layer.shadowOpacity = 0.15
+        rightView.layer.shadowRadius = 5
+        rightView.layer.shadowOffset = CGSize(width: -1, height: 0)
+        customView.addSubview(rightView)
+        
+        let rightButton = UIButton(frame: CGRect(x: 256, y: 0, width:20, height: 44))
+        rightButton.setImage(UIImage(named: "rightArrow-1"), for: .normal)
+        rightButton.backgroundColor = .white
+        customView.addSubview(rightButton)
+        
+        more_rightView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        more_rightView.layer.shadowOpacity = 0.15
+        more_rightView.layer.shadowRadius = 5
+        more_rightView.layer.shadowOffset = CGSize(width: -1, height: 0)
+        
+        let more_calendarButton = UIButton(frame: CGRect(x: 5, y: 6, width: 135, height: 32))
+        more_calendarButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_calendarButton.setImage(UIImage(named: "calendar_gray"), for: .normal)
+        more_calendarButton.setTitle("Пн. 12 октября", for: .normal)
+        more_calendarButton.imageEdgeInsets = UIEdgeInsetsMake(-2.0, 0.0, 0.0, 10.0)
+        more_calendarButton.titleLabel?.font = UIFont(name: "MuseoSansCyrl-300", size: 14)
+        more_calendarButton.setTitleColor(UIColor(red: 177/255.0, green: 177/255.0, blue: 177/255.0, alpha: 1.0), for: .normal)
+        more_calendarButton.layer.shadowOpacity = 0.0
+        scrollView.addSubview(more_calendarButton)
+        let copy_calendarButton = more_calendarButton.copyView()
+        more_iconsScrollView.addSubview(copy_calendarButton)
+        
+        let more_notificationButton = UIButton(frame: CGRect(x: 145, y: 6, width: 32, height: 32))
+        more_notificationButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_notificationButton.setImage(UIImage(named: "notification_grey"), for: .normal)
+        scrollView.addSubview(more_notificationButton)
+        let copy_notificationButton = more_notificationButton.copyView()
+        more_iconsScrollView.addSubview(copy_notificationButton)
+        
+        let more_tagButton = UIButton(frame: CGRect(x: 182, y: 6, width: 32, height: 32))
+        more_tagButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_tagButton.setImage(UIImage(named: "tag_gray"), for: .normal)
+        scrollView.addSubview(more_tagButton)
+        let copy_tagButton = more_tagButton.copyView()
+        more_iconsScrollView.addSubview(copy_tagButton)
+        
+        let more_listButton = UIButton(frame: CGRect(x: 219, y: 6, width: 32, height: 32))
+        more_listButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_listButton.setImage(UIImage(named: "list_gray"), for: .normal)
+        more_listButton.addTarget(self, action: #selector(addCheckList), for: .touchUpInside)
+        scrollView.addSubview(more_listButton)
+        let copy_listButton = more_listButton.copyView()
+        copy_listButton.addTarget(self, action: #selector(addCheckList), for: .touchUpInside)
+        more_iconsScrollView.addSubview(copy_listButton)
+        
+        let more_messageButton = UIButton(frame: CGRect(x: 256, y: 6, width: 32, height: 32))
+        more_messageButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_messageButton.setImage(UIImage(named: "message_gray"), for: .normal)
+        scrollView.addSubview(more_messageButton)
+        let copy_messageButton = more_messageButton.copyView()
+        more_iconsScrollView.addSubview(copy_messageButton)
+        
+        let dismissKeyboardView = UIView(frame: CGRect(x: 276, y: 0, width: 44, height: 44))
+        dismissKeyboardView.backgroundColor = .white
+        customView.addSubview(dismissKeyboardView)
+        
+        let more_dismissKeyboardButton = UIButton(frame: CGRect(x: 283, y: 6, width: 32, height: 32))
+        more_dismissKeyboardButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_dismissKeyboardButton.setImage(UIImage(named: "hide-keyboard-button"), for: .normal)
+        more_dismissKeyboardButton.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+        customView.addSubview(more_dismissKeyboardButton)
+        
+        scrollView.contentSize.width = 135.0 + 4*32.0 + 6*5.0
+        scrollView.showsHorizontalScrollIndicator = false
+        more_iconsScrollView.contentSize.width = 135.0 + 4*32.0 + 6*5.0
+        more_iconsScrollView.showsHorizontalScrollIndicator = false
+    }
+    
     
     
 

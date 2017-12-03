@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 @UIApplicationMain
 
@@ -15,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let appname =  Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+        var strApplicationUUID: String? = KeychainWrapper.standard.string(forKey: appname)
+        if strApplicationUUID == nil {
+            strApplicationUUID = UIDevice.current.identifierForVendor?.uuidString
+            _ = KeychainWrapper.standard.set(strApplicationUUID!, forKey: appname)
+        }
+        print("Device number:")
+        print(strApplicationUUID!)
+        
         return true
     }
 

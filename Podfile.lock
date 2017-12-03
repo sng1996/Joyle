@@ -1,12 +1,15 @@
 PODS:
   - JTAppleCalendar (7.1.1)
+  - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
+  - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   JTAppleCalendar: fa47313f1b9edfb84f771ceddd16ff43d01bb2d6
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 2d522789d7d69dda2f41c86fef88e3353da70405
+PODFILE CHECKSUM: b818b4c6142fcc6d3945516d1c3518cb750b9172
 
 COCOAPODS: 1.2.0

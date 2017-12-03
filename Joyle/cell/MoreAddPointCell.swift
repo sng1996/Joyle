@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreAddPointCell: UICollectionViewCell {
+class MoreAddPointCell: UITableViewCell {
 
     @IBOutlet var button: UIButton!
     @IBOutlet var textField: UITextField!

@@ -6,5 +6,6 @@ target 'Joyle' do
     use_frameworks!
 
     pod 'JTAppleCalendar', '~> 7.0'
+    pod 'SwiftKeychainWrapper'
 
 end
