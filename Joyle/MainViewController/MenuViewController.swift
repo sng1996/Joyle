@@ -12,104 +12,113 @@ class MenuViewController: UIViewController {
 
     @IBOutlet var searchView: UIView!
     @IBOutlet var searchTextField: UITextField!
-    @IBOutlet var notificationButton: UIButton!
-    @IBOutlet var notificationImageView: UIImageView!
     @IBOutlet var inboxCountView: UIView!
     @IBOutlet var inboxCountLabel: UILabel!
     @IBOutlet var todayCountView: UIView!
     @IBOutlet var todayCountLabel: UILabel!
     @IBOutlet var todayTimeView: UIView!
     @IBOutlet var todayTimeLabel: UILabel!
-    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var todayIconLabel: UILabel!
     @IBOutlet var tV: UITableView!
-    @IBOutlet var secondSegmentedControlView: UIView!
-    @IBOutlet var secondSegmentedControl: UISegmentedControl!
-    @IBOutlet var rightButtonView: UIView!
+    @IBOutlet var groupsButton: UIButton!
+    @IBOutlet var tagsButton: UIButton!
+    @IBOutlet var secondView: UIView!
+    @IBOutlet var secondGroupsButton: UIButton!
+    @IBOutlet var secondTagsButton: UIButton!
     @IBOutlet var rightButton: UIButton!
-    @IBOutlet var rightButtonPlus: UIImageView!
-    @IBOutlet var rightButtonArrow: UIImageView!
-    @IBOutlet var bannerView: UIView!
+    @IBOutlet var notificationButton: UIButton!
+    @IBOutlet var settingsButton: UIButton!
+    @IBOutlet var redNotificationButton: UIButton!
     
-    var groupsArray: [String] = []
-    var tagsArray: [String] = []
+    var groupsArray: [Group] = []
+    var tagsArray: [Tag] = []
     var bannerIsOpen: Bool = false
     var currentContentHeight: CGFloat!
+    var currentSegmentIndex: Int = 0
+    
+    let colors = [
+                    UIColor(red:74/255.0, green: 74/255.0, blue: 74/255.0, alpha: 1.0),
+                    UIColor(red:217/255.0, green: 217/255.0, blue: 217/255.0, alpha: 1.0),
+                    UIColor(red:238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0),
+                    UIColor(red:231/255.0, green: 63/255.0, blue: 82/255.0, alpha: 1.0)
+                 ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.isHidden = true
         
-        groupsArray = [
-            "Маркетинг Joyle",
-            "Мобильная разработка альбомного сервиса",
-            "Баку",
-            "Владивосток",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek",
-            "Kek"
-        ]
+        let titleArrayGroups = ["Маркетинг Joyle",
+                          "Мобильная разработка альбомного сервиса",
+                          "Баку",
+                          "Владивосток"]
+        let titleArrayTags = ["Маркетинг",
+                              "Покупки",
+                              "Конская залупа",
+                              "Поросёнок"]
         
-        tagsArray = [
-            "Маркетинг",
-            "Покупки",
-            "Конская залупа",
-            "Поросёнок"
-        ]
+        for i in 0..<4{
+            let tag = Tag()
+            tag.name = titleArrayTags[i]
+            tagsArray.append(tag)
+        }
         
-        searchView.layer.cornerRadius = 4
-        notificationButton.layer.cornerRadius = 4
-        inboxCountView.layer.cornerRadius = 10
-        todayCountView.layer.cornerRadius = 10
-        todayTimeView.layer.cornerRadius = 10
+        for i in 0..<4{
+            let group = Group()
+            group.name = titleArrayGroups[i]
+            for j in 0..<20{
+                let task = Task(name: group.name + String(j))
+                group.tasks.append(task)
+                tagsArray[Int(arc4random()%4)].tasks.append(task)
+            }
+            groupsArray.append(group)
+        }
         
-        let attr = NSDictionary(object: UIFont(name: "MuseoSansCyrl-300", size: 14.0)!, forKey: NSFontAttributeName as NSCopying)
-        segmentedControl.setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
-        secondSegmentedControl.setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
-        
-        rightButtonView.layer.cornerRadius = 20
-        rightButton.layer.cornerRadius = 20
+        setupViews()
         
     }
     
     @IBAction func openBanner(){
         
         if (bannerIsOpen){
-            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-                self.rightButtonPlus.transform = self.rightButtonPlus.transform.rotated(by: CGFloat(CGFloat.pi/4))
-            }, completion: { finished in
-                self.rightButtonArrow.isHidden = false
-            })
-            bannerView.isHidden = true
-            bannerIsOpen = false
+            
         }
         else{
-            rightButtonArrow.isHidden = true
-            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-                self.rightButtonPlus.transform = self.rightButtonPlus.transform.rotated(by: CGFloat(CGFloat.pi/4))
-            }, completion: { finished in
-            })
-            bannerView.isHidden = false
-            bannerIsOpen = true
+           
         }
         
     }
     
-    @IBAction func indexChanged(sender: UISegmentedControl){
-        if (secondSegmentedControl == sender){
-            self.tV.contentOffset.y = 207.0
-            segmentedControl.selectedSegmentIndex = secondSegmentedControl.selectedSegmentIndex
+    @IBAction func indexChanged(sender: UIButton){
+        
+        switch(sender){
+        case groupsButton:          groupsButton.setTitleColor(colors[0], for: .normal)
+                                    secondGroupsButton.setTitleColor(colors[0], for: .normal)
+                                    tagsButton.setTitleColor(colors[1], for: .normal)
+                                    secondTagsButton.setTitleColor(colors[1], for: .normal)
+                                    currentSegmentIndex = 0
+                                    break
+        case tagsButton:            groupsButton.setTitleColor(colors[1], for: .normal)
+                                    secondGroupsButton.setTitleColor(colors[1], for: .normal)
+                                    tagsButton.setTitleColor(colors[0], for: .normal)
+                                    secondTagsButton.setTitleColor(colors[0], for: .normal)
+                                    currentSegmentIndex = 1
+                                    break
+        case secondGroupsButton:    groupsButton.setTitleColor(colors[0], for: .normal)
+                                    secondGroupsButton.setTitleColor(colors[0], for: .normal)
+                                    tagsButton.setTitleColor(colors[1], for: .normal)
+                                    secondTagsButton.setTitleColor(colors[1], for: .normal)
+                                    currentSegmentIndex = 0
+                                    break
+        case secondTagsButton:      groupsButton.setTitleColor(colors[1], for: .normal)
+                                    secondGroupsButton.setTitleColor(colors[1], for: .normal)
+                                    tagsButton.setTitleColor(colors[0], for: .normal)
+                                    secondTagsButton.setTitleColor(colors[0], for: .normal)
+                                    currentSegmentIndex = 1
+                                    break
+        default:                    break
         }
-        else{
-            secondSegmentedControl.selectedSegmentIndex = segmentedControl.selectedSegmentIndex
-        }
+        
         tV.reloadData()
     }
 
@@ -118,16 +127,16 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (segmentedControl.selectedSegmentIndex == 0){
-            return checkLabelFrame(string: groupsArray[indexPath.row]) + 20
+        if (currentSegmentIndex == 0){
+            return checkLabelFrame(string: groupsArray[indexPath.row].name) + 20
         }
         else{
-            return checkLabelFrame(string: tagsArray[indexPath.row]) + 20
+            return checkLabelFrame(string: tagsArray[indexPath.row].name) + 20
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (segmentedControl.selectedSegmentIndex == 0){
+        if (currentSegmentIndex == 0){
             return groupsArray.count
         }
         else{
@@ -139,15 +148,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         
-        if (segmentedControl.selectedSegmentIndex == 0){
-            cell.icon.image = UIImage(named: "folder-icon")
-            cell.label.text = groupsArray[indexPath.row]
+        if (currentSegmentIndex == 0){
+            cell.icon.image = UIImage(named: "folder_green")
+            cell.label.text = groupsArray[indexPath.row].name
             updateLabelFrame(label: cell.label)
             cell.selectionStyle = .none
         }
         else{
             cell.icon.image = UIImage(named: "tags")
-            cell.label.text = tagsArray[indexPath.row]
+            cell.label.text = tagsArray[indexPath.row].name
             updateLabelFrame(label: cell.label)
             cell.selectionStyle = .none
         }
@@ -160,9 +169,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (tV.contentOffset.y > 242.0){
-            secondSegmentedControlView.isHidden = false
-            let bottom = self.view.frame.size.height - 60.0 - (tV.contentSize.height - 242.0)
+        if (tV.contentOffset.y > 217.0){
+            secondView.isHidden = false
+            let bottom = self.view.frame.size.height - 60.0 - (tV.contentSize.height - 217.0)
             if (bottom > 0){
                 tV.contentInset.bottom = bottom
             }
@@ -171,8 +180,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
             }
         }
         else{
-            secondSegmentedControlView.isHidden = true
-            let bottom = self.view.frame.size.height - 60.0 - (tV.contentSize.height - 242.0)
+            secondView.isHidden = true
+            let bottom = self.view.frame.size.height - 60.0 - (tV.contentSize.height - 217.0)
             if (bottom > 0){
                 tV.contentInset.bottom = bottom
             }

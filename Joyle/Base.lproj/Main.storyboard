@@ -21,6 +21,9 @@
         <array key="MuseoSansCyrl_2.otf">
             <string>MuseoSansCyrl-700</string>
         </array>
+        <array key="MuseoSansCyrl_3.otf">
+            <string>MuseoSansCyrl-900</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Menu View Controller-->
@@ -32,68 +35,55 @@
                         <viewControllerLayoutGuide type="bottom" id="Ucf-HS-fO7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kdl-Af-NOa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9T-mT-kDe">
-                                <rect key="frame" x="0.0" y="10" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0p-jQ-3ET">
-                                        <rect key="frame" x="280" y="10" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWH-fR-iOA">
-                                        <rect key="frame" x="10" y="10" width="260" height="30"/>
+                                        <rect key="frame" x="10" y="40" width="300" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Быстрый поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DW-FK-WXi">
-                                                <rect key="frame" x="10" y="0.0" width="220" height="30"/>
+                                                <rect key="frame" x="10" y="0.0" width="270" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zoom" translatesAutoresizingMaskIntoConstraints="NO" id="6c4-Tm-ayA">
-                                                <rect key="frame" x="240" y="10" width="10" height="10"/>
+                                                <rect key="frame" x="280" y="10" width="10" height="10"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kolokol" translatesAutoresizingMaskIntoConstraints="NO" id="jae-zI-hpD">
-                                        <rect key="frame" x="289" y="18" width="12" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wl7-T0-qfN">
-                                <rect key="frame" x="0.0" y="60" width="320" height="496"/>
+                                <rect key="frame" x="0.0" y="80" width="320" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="PFr-Mc-1TR">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="255"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxK-32-fM5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxK-32-fM5">
+                                            <rect key="frame" x="0.0" y="10" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="196" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                            <state key="normal" title="Инбокс" image="inbox">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inbox" translatesAutoresizingMaskIntoConstraints="NO" id="6E6-1d-bww">
-                                            <rect key="frame" x="20" y="12" width="16" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Инбокс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHT-VK-D4T">
-                                            <rect key="frame" x="46" y="9" width="64" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="18"/>
-                                            <color key="textColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swf-CU-Pee">
-                                            <rect key="frame" x="274" y="10" width="26" height="20"/>
+                                            <rect key="frame" x="274" y="20" width="26" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0V-Ta-qIS">
@@ -109,59 +99,78 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vae-0M-3eJ">
                                             <rect key="frame" x="0.0" y="50" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="160" maxY="0.0"/>
+                                            <state key="normal" title="Сегодня">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="qLe-jv-eck" kind="show" id="fhS-Y3-gwJ"/>
+                                            </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="ldz-XE-5mL">
-                                            <rect key="frame" x="20" y="62" width="16" height="16"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-xR-Kgh">
+                                            <rect key="frame" x="0.0" y="90" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сегодня" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-aD-EHM">
-                                            <rect key="frame" x="46" y="59" width="71" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="18"/>
-                                            <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-xR-Kgh">
-                                            <rect key="frame" x="0.0" y="89" width="320" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="169" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                            <state key="normal" title="Календарь" image="calendar_green">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s71-Mr-UCc">
-                                            <rect key="frame" x="0.0" y="128" width="320" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s71-Mr-UCc">
+                                            <rect key="frame" x="0.0" y="130" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="153" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="7" maxY="0.0"/>
+                                            <state key="normal" title="В ожидании" image="hourglass_green">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4f-jY-MNw">
-                                            <rect key="frame" x="0.0" y="167" width="320" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4f-jY-MNw">
+                                            <rect key="frame" x="0.0" y="170" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="185" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                            <state key="normal" title="Заметки" image="book_green">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Календарь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-Se-ef9">
-                                            <rect key="frame" x="46" y="98" width="89" height="22"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puO-b7-78b">
+                                            <rect key="frame" x="0.0" y="217" width="320" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="18"/>
-                                            <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="umt-oP-TmT">
-                                            <rect key="frame" x="20" y="101" width="16" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waitings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwQ-QX-Th9">
-                                            <rect key="frame" x="46" y="137" width="69" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="18"/>
-                                            <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="n2a-TX-QdT">
-                                            <rect key="frame" x="22" y="140" width="12" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Заметки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S1-sB-DiM">
-                                            <rect key="frame" x="46" y="176" width="70" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="18"/>
-                                            <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-8Q-ges">
+                                                    <rect key="frame" x="19" y="2" width="68" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-700" family="Museo Sans Cyrl" pointSize="16"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="11" maxY="0.0"/>
+                                                    <state key="normal" title="Группы">
+                                                        <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="indexChangedWithSender:" destination="fbQ-P1-1QS" eventType="touchUpInside" id="FT8-98-Dxa"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-6c-gnv">
+                                                    <rect key="frame" x="120" y="2" width="60" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-700" family="Museo Sans Cyrl" pointSize="16"/>
+                                                    <state key="normal" title="Теги">
+                                                        <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="indexChangedWithSender:" destination="fbQ-P1-1QS" eventType="touchUpInside" id="XZz-7m-ahA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0c-gb-QBH">
                                             <rect key="frame" x="239" y="60" width="61" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -190,22 +199,13 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qZ6-kF-yF4">
-                                            <rect key="frame" x="10" y="217" width="300" height="29"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR0-tZ-m4t">
+                                            <rect key="frame" x="13" y="62" width="30" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Группы"/>
-                                                <segment title="Тэги"/>
-                                            </segments>
-                                            <color key="tintColor" red="0.2627450980392157" green="0.74901960784313726" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="indexChangedWithSender:" destination="fbQ-P1-1QS" eventType="valueChanged" id="a2W-03-Frb"/>
-                                            </connections>
-                                        </segmentedControl>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notes" translatesAutoresizingMaskIntoConstraints="NO" id="0Ku-By-XoR">
-                                            <rect key="frame" x="22" y="179" width="12" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
+                                            <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="20"/>
+                                            <color key="textColor" red="0.2627450980392157" green="0.74901960784313726" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -218,13 +218,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjp-Pu-P0f">
-                                                    <rect key="frame" x="43" y="13" width="257" height="16"/>
+                                                    <rect key="frame" x="43" y="12" width="257" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-300" family="Museo Sans Cyrl" pointSize="16"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="16"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-Kr-uRI">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder_green" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-Kr-uRI">
                                                     <rect key="frame" x="20" y="15" width="13" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -242,103 +242,77 @@
                                     <outlet property="delegate" destination="fbQ-P1-1QS" id="Fpu-BU-Xk5"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-BG-n13">
-                                <rect key="frame" x="0.0" y="60" width="320" height="49"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-qb-urj">
+                                <rect key="frame" x="0.0" y="80" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="p1f-gq-4fl">
-                                        <rect key="frame" x="10" y="10" width="300" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOV-q4-ab4">
+                                        <rect key="frame" x="19" y="2" width="68" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="Группы"/>
-                                            <segment title="Тэги"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.26274509800000001" green="0.74901960779999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="MuseoSansCyrl-700" family="Museo Sans Cyrl" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="11" maxY="0.0"/>
+                                        <state key="normal" title="Группы">
+                                            <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="indexChangedWithSender:" destination="fbQ-P1-1QS" eventType="valueChanged" id="wfx-Zj-tRH"/>
+                                            <action selector="indexChangedWithSender:" destination="fbQ-P1-1QS" eventType="touchUpInside" id="S2R-hx-rhB"/>
                                         </connections>
-                                    </segmentedControl>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6J-Sv-1Vf">
+                                        <rect key="frame" x="120" y="2" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MuseoSansCyrl-700" family="Museo Sans Cyrl" pointSize="16"/>
+                                        <state key="normal" title="Теги">
+                                            <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="indexChangedWithSender:" destination="fbQ-P1-1QS" eventType="touchUpInside" id="nmv-Bd-H62"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-Jx-Jvi">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dv5-LQ-AsQ">
                                 <rect key="frame" x="270" y="518" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dv5-LQ-AsQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.26274509800000001" green="0.74901960779999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="openBanner" destination="fbQ-P1-1QS" eventType="touchUpInside" id="mXF-0C-ZS2"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="mS8-UC-JvH">
-                                        <rect key="frame" x="9" y="9" width="22" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="small_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="7lC-KH-ovd">
-                                        <rect key="frame" x="25" y="25" width="7" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-0k-C7f">
-                                <rect key="frame" x="154" y="412" width="156" height="102"/>
+                                <color key="backgroundColor" red="0.26274509800000001" green="0.74901960779999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="options_white"/>
+                                <connections>
+                                    <action selector="openBanner" destination="fbQ-P1-1QS" eventType="touchUpInside" id="mXF-0C-ZS2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-qa-9FF">
+                                <rect key="frame" x="60" y="518" width="200" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-W9-AdE">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="102"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYT-VS-cZD">
-                                        <rect key="frame" x="10" y="6" width="136" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Задачу">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name="MuseoSansCyrl-300"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dux-fL-VuU">
-                                        <rect key="frame" x="10" y="61" width="136" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Тег">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name="MuseoSansCyrl-300"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-1f-hUX">
-                                        <rect key="frame" x="10" y="32" width="136" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Группу">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name="MuseoSansCyrl-300"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="14"/>
+                                <state key="normal" title="Настройки" image="settings_gray">
+                                    <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnA-aX-fS9">
+                                <rect key="frame" x="10" y="518" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="notification_gray"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrG-pN-0RS">
+                                <rect key="frame" x="10" y="518" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.24705882352941178" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MuseoSansCyrl-900" family="Museo Sans Cyrl" pointSize="19"/>
+                                <state key="normal" title="12">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfs-B7-lCX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kkb-BJ-Irc">
+                                <rect key="frame" x="60" y="378" width="250" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -346,31 +320,32 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="8gL-bi-Bqf"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <size key="freeformSize" width="320" height="632"/>
                     <connections>
-                        <outlet property="bannerView" destination="gfh-0k-C7f" id="84M-1d-Nhu"/>
+                        <outlet property="groupsButton" destination="hVP-8Q-ges" id="YH9-ph-2hA"/>
                         <outlet property="inboxCountLabel" destination="B0V-Ta-qIS" id="swG-k7-fI9"/>
                         <outlet property="inboxCountView" destination="Swf-CU-Pee" id="uuf-M6-H0O"/>
-                        <outlet property="notificationButton" destination="Y0p-jQ-3ET" id="hgl-X6-sr7"/>
-                        <outlet property="notificationImageView" destination="jae-zI-hpD" id="B57-eB-pPd"/>
+                        <outlet property="notificationButton" destination="vnA-aX-fS9" id="wK3-eD-qY5"/>
+                        <outlet property="redNotificationButton" destination="UrG-pN-0RS" id="bLg-Tg-Rkj"/>
                         <outlet property="rightButton" destination="dv5-LQ-AsQ" id="fsA-o8-iD9"/>
-                        <outlet property="rightButtonArrow" destination="7lC-KH-ovd" id="pgc-HR-lDB"/>
-                        <outlet property="rightButtonPlus" destination="mS8-UC-JvH" id="ODJ-W0-lAW"/>
-                        <outlet property="rightButtonView" destination="iL8-Jx-Jvi" id="FGf-ez-g6L"/>
                         <outlet property="searchTextField" destination="6DW-FK-WXi" id="8PT-zw-Wj2"/>
                         <outlet property="searchView" destination="bWH-fR-iOA" id="Hfb-XN-U0Z"/>
-                        <outlet property="secondSegmentedControl" destination="p1f-gq-4fl" id="oeY-s5-YxC"/>
-                        <outlet property="secondSegmentedControlView" destination="Zfd-BG-n13" id="SmG-xv-xbZ"/>
-                        <outlet property="segmentedControl" destination="qZ6-kF-yF4" id="RRI-kh-sQM"/>
+                        <outlet property="secondGroupsButton" destination="gOV-q4-ab4" id="lyG-aB-bQZ"/>
+                        <outlet property="secondTagsButton" destination="j6J-Sv-1Vf" id="uSc-qS-dJO"/>
+                        <outlet property="secondView" destination="aaA-qb-urj" id="ei8-jS-Nh2"/>
+                        <outlet property="settingsButton" destination="Moh-qa-9FF" id="zpE-C2-sKT"/>
                         <outlet property="tV" destination="wl7-T0-qfN" id="2wl-WF-8fD"/>
+                        <outlet property="tagsButton" destination="kPK-6c-gnv" id="zhV-EX-nfW"/>
                         <outlet property="todayCountLabel" destination="bCM-nk-IaY" id="FVn-LU-5kJ"/>
                         <outlet property="todayCountView" destination="mgg-fA-HAJ" id="JKS-SH-TZG"/>
+                        <outlet property="todayIconLabel" destination="OR0-tZ-m4t" id="bxV-hW-ris"/>
                         <outlet property="todayTimeLabel" destination="wnQ-q4-mWG" id="bwi-TV-Adx"/>
                         <outlet property="todayTimeView" destination="k0c-gb-QBH" id="DY1-kv-PpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bt-uR-8jc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="87.676056338028175"/>
+            <point key="canvasLocation" x="-168.75" y="87.676056338028175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="22w-km-anD">
@@ -388,6 +363,93 @@
             </objects>
             <point key="canvasLocation" x="-1080" y="88"/>
         </scene>
+        <!--Today View Controller-->
+        <scene sceneID="VCk-Wj-tGe">
+            <objects>
+                <viewController id="qLe-jv-eck" customClass="TodayViewController" customModule="Joyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZZZ-MT-Wu9"/>
+                        <viewControllerLayoutGuide type="bottom" id="rFX-0U-4oi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ibw-ws-caH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-NE-wEg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сегодня" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWd-2r-eZj">
+                                        <rect key="frame" x="20" y="42" width="74" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="18"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPJ-Uw-aTx">
+                                        <rect key="frame" x="205" y="40" width="105" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MuseoSansCyrl-500" family="Museo Sans Cyrl" pointSize="12"/>
+                                        <state key="normal" title="Просроченные">
+                                            <color key="titleColor" red="0.2627450980392157" green="0.74901960784313726" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ftf-Qa-rga">
+                                <rect key="frame" x="10" y="70" width="300" height="438"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hnm-Yx-Wt5">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g9g-Jl-OlY">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkk-jG-gZv">
+                                <rect key="frame" x="270" y="518" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26274509800000001" green="0.74901960779999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="closeView" destination="BYZ-38-t0r" eventType="touchUpInside" id="T3n-gm-hie"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="OCZ-OT-Ee6">
+                                <rect key="frame" x="279" y="527" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wh-8J-O93">
+                                <rect key="frame" x="10" y="518" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_button_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="zEr-TX-r2J">
+                                <rect key="frame" x="23" y="529" width="11" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <size key="freeformSize" width="320" height="632"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFJ-iT-5fP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.5" y="-704.57746478873241"/>
+        </scene>
         <!--Tasks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -397,7 +459,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l7i-pe-Uf4">
@@ -525,6 +587,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0W-cJ-cY0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="pressCloseMoreView" destination="BYZ-38-t0r" eventType="touchUpInside" id="BZ4-Gh-eAd"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="067-Pb-MrI">
                                 <rect key="frame" x="0.0" y="45" width="320" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -605,7 +675,7 @@
                                                 </connections>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.94975291709999998" blue="0.97445415170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBE-5n-nu2">
                                         <rect key="frame" x="0.0" y="99" width="320" height="44"/>
@@ -672,10 +742,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Готово" id="rBH-vb-RYJ"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="632"/>
                     <connections>
                         <outlet property="addButton" destination="c8L-fC-Kvb" id="hhR-Nf-yWn"/>
                         <outlet property="addNotificationView" destination="yZZ-sc-vZn" id="DKb-aN-OFa"/>
                         <outlet property="backButton" destination="rke-Qo-xBa" id="pte-pa-gAY"/>
+                        <outlet property="blackButton_moreView" destination="w0W-cJ-cY0" id="hdp-mk-zTD"/>
                         <outlet property="blackView" destination="9ug-Ao-5K1" id="6X4-aO-PBR"/>
                         <outlet property="cV" destination="l7i-pe-Uf4" id="iky-DU-JZf"/>
                         <outlet property="calendarView" destination="Thh-u9-iob" id="o0O-pJ-kmr"/>
@@ -708,21 +781,21 @@
     </scenes>
     <resources>
         <image name="back_button_arrow" width="11" height="20"/>
-        <image name="banner" width="156" height="102"/>
-        <image name="calendar" width="16" height="16"/>
-        <image name="clock" width="12" height="16"/>
+        <image name="book_green" width="13" height="16"/>
+        <image name="calendar_green" width="16" height="16"/>
         <image name="folder" width="12" height="12"/>
-        <image name="inbox" width="12" height="12"/>
-        <image name="kolokol" width="12" height="15"/>
+        <image name="folder_green" width="13" height="13"/>
+        <image name="hourglass_green" width="13" height="16"/>
+        <image name="inbox" width="16" height="16"/>
         <image name="leftArrow" width="7" height="18"/>
-        <image name="notes" width="12" height="16"/>
+        <image name="notification_gray" width="13" height="16"/>
         <image name="options" width="16" height="4"/>
+        <image name="options_white" width="18" height="4"/>
         <image name="plus" width="22" height="22"/>
         <image name="rightArrow-1" width="7" height="18"/>
         <image name="round_green" width="8" height="8"/>
-        <image name="small_down_arrow" width="7" height="5"/>
+        <image name="settings_gray" width="14" height="14"/>
         <image name="small_plus" width="8" height="8"/>
-        <image name="today" width="16" height="16"/>
         <image name="zoom" width="10" height="10"/>
     </resources>
 </document>

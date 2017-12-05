@@ -56,6 +56,7 @@ class ViewController: UIViewController{
     @IBOutlet var more_iconsScrollView: UIScrollView!
     @IBOutlet var more_leftView: UIView!
     @IBOutlet var more_rightView: UIView!
+    @IBOutlet var blackButton_moreView: UIButton!
     
     
     let rectView: UIView = UIView()
@@ -166,6 +167,8 @@ class ViewController: UIViewController{
         let moreAddPointCellNib = UINib(nibName: "MoreAddPointCell", bundle: nil)
         more_tV.register(moreAddPointCellNib, forCellReuseIdentifier: "moreAddPointCell")
         
+        blackButton_moreView.addTarget(self, action: #selector(closeMoreView), for: .touchUpInside)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
@@ -216,6 +219,7 @@ class ViewController: UIViewController{
     func closeMoreView(){
         
         moreView.isHidden = true
+        blackButton_moreView.isHidden = true
         changeButton(toRed: false)
         cvTasks[moreView.tag].note = more_note.text
         

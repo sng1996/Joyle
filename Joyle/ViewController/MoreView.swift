@@ -80,7 +80,7 @@ extension ViewController{
     
     func openMoreView(){
         
-        blackView.isHidden = false
+        blackButton_moreView.isHidden = false
         new_updateMoreView()
         
     }

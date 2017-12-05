@@ -344,6 +344,62 @@ extension ViewController{
         let copy_messageButton = more_messageButton.copyView()
         more_iconsScrollView.addSubview(copy_messageButton)
         
+        let more_cursorButton = UIButton(frame: CGRect(x: 293, y: 6, width: 32, height: 32))
+        more_cursorButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_cursorButton.setImage(UIImage(named: "cursor"), for: .normal)
+        scrollView.addSubview(more_cursorButton)
+        let copy_cursorButton = more_cursorButton.copyView()
+        more_iconsScrollView.addSubview(copy_cursorButton)
+        
+        let more_shareButton = UIButton(frame: CGRect(x: 330, y: 6, width: 32, height: 32))
+        more_shareButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_shareButton.setImage(UIImage(named: "share"), for: .normal)
+        scrollView.addSubview(more_shareButton)
+        let copy_shareButton = more_shareButton.copyView()
+        more_iconsScrollView.addSubview(copy_shareButton)
+        
+        let more_hourGlassButton = UIButton(frame: CGRect(x: 367, y: 6, width: 32, height: 32))
+        more_hourGlassButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_hourGlassButton.setImage(UIImage(named: "hourglass"), for: .normal)
+        scrollView.addSubview(more_hourGlassButton)
+        let copy_hourGlassButton = more_hourGlassButton.copyView()
+        more_iconsScrollView.addSubview(copy_hourGlassButton)
+        
+        let more_delegateButton = UIButton(frame: CGRect(x: 404, y: 6, width: 32, height: 32))
+        more_delegateButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_delegateButton.setImage(UIImage(named: "delegate"), for: .normal)
+        scrollView.addSubview(more_delegateButton)
+        let copy_delegateButton = more_delegateButton.copyView()
+        more_iconsScrollView.addSubview(copy_delegateButton)
+        
+        let more_flameButton = UIButton(frame: CGRect(x: 441, y: 6, width: 32, height: 32))
+        more_flameButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_flameButton.setImage(UIImage(named: "flame-icon"), for: .normal)
+        scrollView.addSubview(more_flameButton)
+        let copy_flameButton = more_flameButton.copyView()
+        more_iconsScrollView.addSubview(copy_flameButton)
+        
+        let more_flameButton_green = UIButton(frame: CGRect(x: 478, y: 6, width: 32, height: 32))
+        more_flameButton_green.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_flameButton_green.setImage(UIImage(named: "flame-icon-green"), for: .normal)
+        scrollView.addSubview(more_flameButton_green)
+        let copy_flameButton_green = more_flameButton_green.copyView()
+        more_iconsScrollView.addSubview(copy_flameButton_green)
+        
+        let more_flameButton_yellow = UIButton(frame: CGRect(x: 515, y: 6, width: 32, height: 32))
+        more_flameButton_yellow.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_flameButton_yellow.setImage(UIImage(named: "flame-icon-yellow"), for: .normal)
+        scrollView.addSubview(more_flameButton_yellow)
+        let copy_flameButton_yellow = more_flameButton_yellow.copyView()
+        more_iconsScrollView.addSubview(copy_flameButton_yellow)
+        
+        let more_flameButton_red = UIButton(frame: CGRect(x: 552, y: 6, width: 32, height: 32))
+        more_flameButton_red.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
+        more_flameButton_red.setImage(UIImage(named: "flame-icon-red"), for: .normal)
+        scrollView.addSubview(more_flameButton_red)
+        let copy_flameButton_red = more_flameButton_red.copyView()
+        more_iconsScrollView.addSubview(copy_flameButton_red)
+        
         let dismissKeyboardView = UIView(frame: CGRect(x: 276, y: 0, width: 44, height: 44))
         dismissKeyboardView.backgroundColor = .white
         customView.addSubview(dismissKeyboardView)
@@ -354,9 +410,9 @@ extension ViewController{
         more_dismissKeyboardButton.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
         customView.addSubview(more_dismissKeyboardButton)
         
-        scrollView.contentSize.width = 135.0 + 4*32.0 + 6*5.0
+        scrollView.contentSize.width = 135.0 + 12*32.0 + 13*5.0
         scrollView.showsHorizontalScrollIndicator = false
-        more_iconsScrollView.contentSize.width = 135.0 + 4*32.0 + 6*5.0
+        more_iconsScrollView.contentSize.width = 135.0 + 12*32.0 + 13*5.0
         more_iconsScrollView.showsHorizontalScrollIndicator = false
     }
     
