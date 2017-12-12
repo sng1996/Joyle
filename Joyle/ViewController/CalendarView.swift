@@ -23,6 +23,11 @@ class CalendarView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
         let nib = UINib(nibName: "CalendarView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
         
@@ -60,6 +65,7 @@ class CalendarView: UIView {
         
         addSubview(calendarView)
         calendarView.frame = self.bounds
+        
     }
     
     @IBAction func pressButton(sender: UIButton){

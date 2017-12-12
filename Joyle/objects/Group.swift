@@ -10,7 +10,10 @@ import UIKit
 
 class Group: NSObject {
 
+    var id: String = ""
     var name: String = ""
     var tasks: [Task] = []
+    var user_id: String = ""
+    var task_item_ids: [String] = []
     
 }

@@ -1,5 +1,5 @@
 //
-//  MainViewControllerDesign.swift
+//  MenuViewControllerDesign.swift
 //  Joyle
 //
 //  Created by Сергей Гаврилко on 20.11.17.
@@ -38,6 +38,7 @@ extension MenuViewController{
         notificationButton.layer.cornerRadius = 20
         redNotificationButton.layer.cornerRadius = 20
         rightButton.layer.cornerRadius = 20
+        optionsView.layer.cornerRadius = 3
     }
     
     func changeNotificationButton(isRed: Bool){
@@ -47,6 +48,30 @@ extension MenuViewController{
         }
         else{
             redNotificationButton.isHidden = true
+        }
+        
+    }
+    
+    func addButtonTargets(){
+        optionsView.buttons[1].addTarget(self, action: #selector(activeNewElement(sender:)), for: .touchUpInside)
+        optionsView.buttons[3].addTarget(self, action: #selector(activeNewElement(sender:)), for: .touchUpInside)
+    }
+    
+    func activeSegment(isGroups: Bool){
+        
+        if isGroups{
+            groupsButton.setTitleColor(colors[0], for: .normal)
+            secondGroupsButton.setTitleColor(colors[0], for: .normal)
+            tagsButton.setTitleColor(colors[1], for: .normal)
+            secondTagsButton.setTitleColor(colors[1], for: .normal)
+            currentSegmentIndex = 0
+        }
+        else{
+            groupsButton.setTitleColor(colors[1], for: .normal)
+            secondGroupsButton.setTitleColor(colors[1], for: .normal)
+            tagsButton.setTitleColor(colors[0], for: .normal)
+            secondTagsButton.setTitleColor(colors[0], for: .normal)
+            currentSegmentIndex = 1
         }
         
     }

@@ -49,7 +49,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.textField.delegate = self
                 cell.textField.placeholder = "Добавить подпункт"
                 cell.textField.inputAccessoryView = customView
-                cell.textField.inputAccessoryView?.isHidden = true
+                cell.textField.inputAccessoryView?.isHidden = false
+                cell.textField.reloadInputViews()
                 cell.textField.becomeFirstResponder()
                 return cell
             }
@@ -59,7 +60,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "groupsCell", for: indexPath) as! GroupsCell
             
             switch indexPath.row{
             case 0: cell.icon.image = UIImage(named: "inbox")

@@ -19,6 +19,10 @@ class GroupsView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         let nib = UINib(nibName: "GroupsView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
         addSubview(groupsView)

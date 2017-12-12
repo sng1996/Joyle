@@ -61,7 +61,7 @@ class UITextViewPlaceholder: UITextView, UITextViewDelegate {
     func new_updateMoreView(heightDifference: CGFloat, view: UIView, textView: UITextView){
         let scrollView = view as! UIScrollView
         moveObjectsInsideScrollView(heightDifference: heightDifference, view: view, textView: textView)
-        if (isFitBetweenYAndKeyboard(heightDifference: heightDifference, view: view, textView: textView)){
+        /*if (isFitBetweenYAndKeyboard(heightDifference: heightDifference, view: view, textView: textView)){
             scrollView.frame.size.height = scrollView.contentSize.height
             moveObjectsInsideMoreView(heightDifference: heightDifference, view: view, textView: textView)
             textView.inputAccessoryView?.isHidden = true
@@ -76,7 +76,7 @@ class UITextViewPlaceholder: UITextView, UITextViewDelegate {
             textView.inputAccessoryView?.isHidden = false
             textView.reloadInputViews()
         }
-        else{
+        else{*/
             let gap: CGFloat = 5.0
             let inputView: CGFloat = 44.0
             scrollView.frame.size.height = (view.superview?.superview?.frame.size.height)! - CGFloat(textView.tag) - inputView - gap - 20.0 - scrollView.frame.origin.y
@@ -84,7 +84,7 @@ class UITextViewPlaceholder: UITextView, UITextViewDelegate {
             view.superview?.frame.origin.y = 20.0
             textView.inputAccessoryView?.isHidden = false
             textView.reloadInputViews()
-        }
+        //}
         
     }
     

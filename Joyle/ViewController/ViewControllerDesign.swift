@@ -123,14 +123,19 @@ extension ViewController{
     }
     
     func openGroupsView(){
+        
+        let groupsView = createGroupsView()
+        
         groupsView.tV.reloadData()
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            self.groupsView.frame.origin = CGPoint(x: 0, y: 0)
+            groupsView.frame.origin = CGPoint(x: 0, y: 0)
+            self.blackButton.isHidden = false
         }, completion: { finished in
         })
-        blackView.isHidden = false
+
         groupsView.label.text = cvTasks[beginRow].name
         updateLabelFrame(label: groupsView.label)
+        
         groupsView.replace_label.frame.origin = CGPoint(x: groupsView.replace_label.frame.origin.x, y: groupsView.label.frame.origin.y + groupsView.label.frame.size.height + 6.0)
         groupsView.tV.frame.origin = CGPoint(x: groupsView.tV.frame.origin.x, y: groupsView.replace_label.frame.origin.y + groupsView.replace_label.frame.size.height + 20.0)
         if ((groupsView.tV.contentSize.height + groupsView.tV.frame.origin.y) > self.view.frame.size.height){
@@ -142,16 +147,21 @@ extension ViewController{
             groupsView.tV.isScrollEnabled = false
         }
         groupsView.frame.size.height = groupsView.tV.frame.origin.y + groupsView.tV.frame.size.height
+        
+        isViewOpen = 4
         changeButton(toRed: true)
     }
     
     func closeGroupsView(){
-        isViewOpen = 4
+        isViewOpen = 0
+        
+        let groupsView = generalView as! GroupsView
+    
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            self.groupsView.frame.origin = CGPoint(x: 0, y: -(self.groupsView.frame.size.height) - 50.0)
+            groupsView.frame.origin = CGPoint(x: 0, y: -self.view.frame.size.height)
+            self.blackButton.isHidden = true
         }, completion: { finished in
         })
-        blackView.isHidden = true
         changeButton(toRed: false)
     }
     
@@ -177,56 +187,65 @@ extension ViewController{
     func openCalendarView(){
         
         isViewOpen = 1
+        let calendarView = createCalendarView()
+        
         calendarView.cV.reloadData()
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            self.calendarView.frame.origin = CGPoint(x: 0, y: 0)
+            calendarView.frame.origin = CGPoint(x: 0, y: 0)
+            self.blackButton.isHidden = false
         }, completion: { finished in
         })
-        blackView.isHidden = false
         changeButton(toRed: true)
         
     }
     
     func closeCalendarView(){
+        isViewOpen = 0
+        let calendarView = generalView as! CalendarView
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            self.calendarView.frame.origin = CGPoint(x: 20, y: -(self.calendarView.frame.size.height) - 50.0)
+            calendarView.frame.origin = CGPoint(x: 20, y: -self.view.frame.size.height)
+            self.blackButton.isHidden = true
         }, completion: { finished in
         })
-        secondBlackView.isHidden = true
         changeButton(toRed: false)
     }
     
     func openNotificationView(){
         isViewOpen = 2
+        self.addNotificationView.frame.origin = CGPoint(x: 20, y: -140)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
             self.addNotificationView.frame.origin = CGPoint(x: 20, y: 140)
+            self.secondBlackButton.isHidden = false
         }, completion: { finished in
         })
-        secondBlackView.isHidden = false
         changeButton(toRed: true)
-        
     }
     
     func closeNotificationView(){
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            self.addNotificationView.frame.origin = CGPoint(x: 20, y: -(self.calendarView.frame.size.height) - 50.0)
+            self.addNotificationView.frame.origin = CGPoint(x: 20, y: -140)
+            self.secondBlackButton.isHidden = true
         }, completion: { finished in
         })
-        secondBlackView.isHidden = true
-        changeButton(toRed: false)
+        changeButton(toRed: true)
     }
     
-    func setupGroupsView(){
-        groupsView.frame.origin = CGPoint(x: 0, y: -(groupsView.frame.size.height) - 50.0)
+    func createGroupsView() -> GroupsView{
+        generalView = GroupsView(frame: CGRect(x: 0, y: -self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - bottomMargin))
+        let groupsView = generalView as! GroupsView
         groupsView.layer.shadowColor = UIColor.black.cgColor
         groupsView.layer.shadowOffset = CGSize(width: CGFloat(0.0), height: CGFloat(4.0))
         groupsView.layer.shadowOpacity = 0.06
         groupsView.layer.shadowRadius = 10
         groupsView.tV.dataSource = self
         groupsView.tV.delegate = self
+        setupGroupsCell()
+        return groupsView
     }
     
-    func setupCalendarView(){
+    func createCalendarView() -> CalendarView{
+        generalView = CalendarView(frame: CGRect(x: 0, y: -self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - bottomMargin))
+        let calendarView = generalView as! CalendarView
         calendarView.cV.minimumLineSpacing = 0
         calendarView.cV.minimumInteritemSpacing = 0
         calendarView.frame.origin = CGPoint(x: 0, y: -(calendarView.frame.size.height) - 50.0)
@@ -236,6 +255,8 @@ extension ViewController{
         calendarView.layer.shadowRadius = 10
         calendarView.cV.calendarDataSource = self
         calendarView.cV.calendarDelegate = self
+        setupCalendarCell()
+        return calendarView
     }
     
     func setupAddNotificationView(){
@@ -245,13 +266,15 @@ extension ViewController{
     
     func setupCalendarCell(){
         let calendarCellNib = UINib(nibName: "CalendarCell", bundle: nil)
+        let calendarView = generalView as! CalendarView
         calendarView.cV.register(calendarCellNib, forCellWithReuseIdentifier: "calendarCell")
         calendarView.addNotificationButton.addTarget(self, action: #selector(openNotificationView), for: .touchUpInside)
     }
     
     func setupGroupsCell(){
-        let groupsCellNib = UINib(nibName: "GroupCell", bundle: nil)
-        groupsView.tV.register(groupsCellNib, forCellReuseIdentifier: "groupCell")
+        let groupsView = generalView as! GroupsView
+        let groupsCellNib = UINib(nibName: "GroupsCell", bundle: nil)
+        groupsView.tV.register(groupsCellNib, forCellReuseIdentifier: "groupsCell")
     }
     
     func createCustomView(){
@@ -324,8 +347,10 @@ extension ViewController{
         let more_tagButton = UIButton(frame: CGRect(x: 182, y: 6, width: 32, height: 32))
         more_tagButton.backgroundColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1.0)
         more_tagButton.setImage(UIImage(named: "tag_gray"), for: .normal)
+        more_tagButton.addTarget(self, action: #selector(addTags), for: .touchUpInside)
         scrollView.addSubview(more_tagButton)
         let copy_tagButton = more_tagButton.copyView()
+        copy_tagButton.addTarget(self, action: #selector(addTags), for: .touchUpInside)
         more_iconsScrollView.addSubview(copy_tagButton)
         
         let more_listButton = UIButton(frame: CGRect(x: 219, y: 6, width: 32, height: 32))

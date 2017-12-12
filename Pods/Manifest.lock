@@ -1,15 +1,20 @@
 PODS:
   - JTAppleCalendar (7.1.1)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
+  - SQLite.swift (~> 0.11.4)
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   JTAppleCalendar: fa47313f1b9edfb84f771ceddd16ff43d01bb2d6
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: b818b4c6142fcc6d3945516d1c3518cb750b9172
+PODFILE CHECKSUM: 3b855a777b3473ac8766333a492f3ac9fcd3cd8e
 
 COCOAPODS: 1.2.0

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SQLite
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var searchView: UIView!
     @IBOutlet var searchTextField: UITextField!
@@ -29,12 +30,33 @@ class MenuViewController: UIViewController {
     @IBOutlet var notificationButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
     @IBOutlet var redNotificationButton: UIButton!
+    @IBOutlet var optionsView: OptionsView!
+    @IBOutlet var backBannerButton: UIButton!
+    @IBOutlet var buttonsView: UIView!
+    @IBOutlet var panelView: UIView!
+    
+    //DB
+    var database: Connection!
+    //groups
+    let groupsTable = Table("groups")
+    let id_groups = Expression<String>("id")
+    let name_groups = Expression<String>("name")
+    let user_id_groups = Expression<String>("user_id")
+    //tags
+    let tagsTable = Table("tags")
+    let id_tags = Expression<String>("id")
+    let name_tags = Expression<String>("name")
+    let user_id_tags = Expression<String>("user_id")
     
     var groupsArray: [Group] = []
     var tagsArray: [Tag] = []
-    var bannerIsOpen: Bool = false
+    var inbox: Group!
     var currentContentHeight: CGFloat!
     var currentSegmentIndex: Int = 0
+    var newElement: Int = 0
+    var myKeyboardHeight: CGFloat = 0.0
+    var isNeedToOffset: Bool = false
+    var isKeyboardOpen: Bool = false
     
     let colors = [
                     UIColor(red:74/255.0, green: 74/255.0, blue: 74/255.0, alpha: 1.0),
@@ -48,147 +70,101 @@ class MenuViewController: UIViewController {
 
         self.navigationController?.navigationBar.isHidden = true
         
-        let titleArrayGroups = ["Маркетинг Joyle",
-                          "Мобильная разработка альбомного сервиса",
-                          "Баку",
-                          "Владивосток"]
-        let titleArrayTags = ["Маркетинг",
-                              "Покупки",
-                              "Конская залупа",
-                              "Поросёнок"]
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
-        for i in 0..<4{
-            let tag = Tag()
-            tag.name = titleArrayTags[i]
-            tagsArray.append(tag)
-        }
-        
-        for i in 0..<4{
-            let group = Group()
-            group.name = titleArrayGroups[i]
-            for j in 0..<20{
-                let task = Task(name: group.name + String(j))
-                group.tasks.append(task)
-                tagsArray[Int(arc4random()%4)].tasks.append(task)
-            }
-            groupsArray.append(group)
-        }
-        
+        setupDB()
+        addButtonTargets()
         setupViews()
         
     }
     
-    @IBAction func openBanner(){
+    override func viewWillAppear(_ animated: Bool) {
         
-        if (bannerIsOpen){
-            
+        createTable_groups()
+        createTable_tags()
+        updateData_groups()
+        updateData_tags()
+        getGroups_API()
+        getTags_API()
+        
+    }
+    
+    @IBAction func openBanner(){
+
+        optionsView.isHidden = false
+        backBannerButton.isHidden = false
+        
+    }
+    
+    @IBAction func closeBanner(){
+        
+        optionsView.isHidden = true
+        backBannerButton.isHidden = true
+        
+    }
+    
+    func activeNewElement(sender: UIButton){
+        
+        newElement = sender.tag
+        tV.contentOffset.y = 100.0
+        if (newElement == 1){
+            activeSegment(isGroups: true)
         }
-        else{
-           
+        if (newElement == 3){
+            activeSegment(isGroups: false)
         }
+        tV.reloadData()
+        optionsView.isHidden = true
+        backBannerButton.isHidden = true
         
     }
     
     @IBAction func indexChanged(sender: UIButton){
         
         switch(sender){
-        case groupsButton:          groupsButton.setTitleColor(colors[0], for: .normal)
-                                    secondGroupsButton.setTitleColor(colors[0], for: .normal)
-                                    tagsButton.setTitleColor(colors[1], for: .normal)
-                                    secondTagsButton.setTitleColor(colors[1], for: .normal)
-                                    currentSegmentIndex = 0
+        case groupsButton:          activeSegment(isGroups: true)
                                     break
-        case tagsButton:            groupsButton.setTitleColor(colors[1], for: .normal)
-                                    secondGroupsButton.setTitleColor(colors[1], for: .normal)
-                                    tagsButton.setTitleColor(colors[0], for: .normal)
-                                    secondTagsButton.setTitleColor(colors[0], for: .normal)
-                                    currentSegmentIndex = 1
+        case tagsButton:            activeSegment(isGroups: false)
                                     break
-        case secondGroupsButton:    groupsButton.setTitleColor(colors[0], for: .normal)
-                                    secondGroupsButton.setTitleColor(colors[0], for: .normal)
-                                    tagsButton.setTitleColor(colors[1], for: .normal)
-                                    secondTagsButton.setTitleColor(colors[1], for: .normal)
-                                    currentSegmentIndex = 0
+        case secondGroupsButton:    activeSegment(isGroups: true)
                                     break
-        case secondTagsButton:      groupsButton.setTitleColor(colors[1], for: .normal)
-                                    secondGroupsButton.setTitleColor(colors[1], for: .normal)
-                                    tagsButton.setTitleColor(colors[0], for: .normal)
-                                    secondTagsButton.setTitleColor(colors[0], for: .normal)
-                                    currentSegmentIndex = 1
+        case secondTagsButton:      activeSegment(isGroups: false)
                                     break
         default:                    break
         }
         
         tV.reloadData()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        if (textField.text?.isEmpty)!{
+        }
+        else{
+            if (newElement == 1){
+                createGroup(name: textField.text!)
+            }
+            if (newElement == 3){
+                createTag(name: textField.text!)
+            }
+        }
+        newElement = 0
+        tV.reloadData()
+        return false
+    }
+    
+    func keyBoardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            myKeyboardHeight = keyboardHeight
+        }
+        isKeyboardOpen = true
+    }
+    
+    func keyBoardWillHide(notification: NSNotification) {
+        isKeyboardOpen = false
+    }
 
-}
-
-extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (currentSegmentIndex == 0){
-            return checkLabelFrame(string: groupsArray[indexPath.row].name) + 20
-        }
-        else{
-            return checkLabelFrame(string: tagsArray[indexPath.row].name) + 20
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (currentSegmentIndex == 0){
-            return groupsArray.count
-        }
-        else{
-            return tagsArray.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
-        
-        if (currentSegmentIndex == 0){
-            cell.icon.image = UIImage(named: "folder_green")
-            cell.label.text = groupsArray[indexPath.row].name
-            updateLabelFrame(label: cell.label)
-            cell.selectionStyle = .none
-        }
-        else{
-            cell.icon.image = UIImage(named: "tags")
-            cell.label.text = tagsArray[indexPath.row].name
-            updateLabelFrame(label: cell.label)
-            cell.selectionStyle = .none
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (tV.contentOffset.y > 217.0){
-            secondView.isHidden = false
-            let bottom = self.view.frame.size.height - 60.0 - (tV.contentSize.height - 217.0)
-            if (bottom > 0){
-                tV.contentInset.bottom = bottom
-            }
-            else{
-                tV.contentInset.bottom = 0
-            }
-        }
-        else{
-            secondView.isHidden = true
-            let bottom = self.view.frame.size.height - 60.0 - (tV.contentSize.height - 217.0)
-            if (bottom > 0){
-                tV.contentInset.bottom = bottom
-            }
-            else{
-                tV.contentInset.bottom = 0
-            }
-        }
-    }
-    
 }

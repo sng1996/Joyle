@@ -37,12 +37,8 @@ class ViewController: UIViewController{
     @IBOutlet var replaceView: UIView!
     @IBOutlet var addButton: UIButton!
     @IBOutlet var backButton: UIButton!
-    @IBOutlet var blackView: UIView!
     @IBOutlet var rightButton_image: UIImageView!
-    @IBOutlet var calendarView: CalendarView!
-    @IBOutlet var groupsView: GroupsView!
     @IBOutlet var addNotificationView: AddNotificationView!
-    @IBOutlet var secondBlackView: UIView!
     @IBOutlet var moreView: UIView!
     
     @IBOutlet var more_titleView: UIView!
@@ -56,8 +52,9 @@ class ViewController: UIViewController{
     @IBOutlet var more_iconsScrollView: UIScrollView!
     @IBOutlet var more_leftView: UIView!
     @IBOutlet var more_rightView: UIView!
-    @IBOutlet var blackButton_moreView: UIButton!
-    
+    @IBOutlet var blackButton: UIButton!
+    @IBOutlet var secondBlackButton: UIButton!
+    @IBOutlet var generalView: UIView!
     
     let rectView: UIView = UIView()
     var views: [UIView] = []
@@ -83,6 +80,7 @@ class ViewController: UIViewController{
     
     var cvTasks: [Task] = []
     var finishedTasks: [Task] = []
+    var group: Group!
     var groupsArray: [String] = []
     var tmpTask: Task!
     var isCopyTime: Bool = false
@@ -110,7 +108,7 @@ class ViewController: UIViewController{
             "Владивосток"
         ]
         
-        cvTasks = [
+        /*cvTasks = [
             Task(name: "Список горячих клавиш для веб версии"),
             Task(name: "Сделать уборку дома"),
             Task(name: "Прочитать заметку по уберизации"),
@@ -123,7 +121,7 @@ class ViewController: UIViewController{
             Task(name: "Передернуть"),
             Task(name: "Вынести мусор"),
             Task(name: "Позвонить Олегу")
-        ]
+        ]*/
         
         setupRectView()
         setupBorderSublayer()
@@ -133,21 +131,7 @@ class ViewController: UIViewController{
         setupButtons()
         setupLevelViews()
         setupUnderTopView()
-        setupGroupsView()
-        setupCalendarView()
-        setupCalendarCell()
         setupAddNotificationView()
-        setupGroupsCell()
-        
-        /*let moreCellNib = UINib(nibName: "MoreCell", bundle: nil)
-        moreView.cV.register(moreCellNib, forCellWithReuseIdentifier: "moreCell")
-        let moreNoteCellNib = UINib(nibName: "MoreNoteCell", bundle: nil)
-        moreView.cV.register(moreNoteCellNib, forCellWithReuseIdentifier: "moreNoteCell")
-        let moreAddPointCellNib = UINib(nibName: "MoreAddPointCell", bundle: nil)
-        moreView.cV.register(moreAddPointCellNib, forCellWithReuseIdentifier: "moreAddPointCell")
-        
-        moreView.cV.delegate = self
-        moreView.cV.dataSource = self*/
         
         moreView.layer.shadowRadius = 4
         moreView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
@@ -166,8 +150,6 @@ class ViewController: UIViewController{
         
         let moreAddPointCellNib = UINib(nibName: "MoreAddPointCell", bundle: nil)
         more_tV.register(moreAddPointCellNib, forCellReuseIdentifier: "moreAddPointCell")
-        
-        blackButton_moreView.addTarget(self, action: #selector(closeMoreView), for: .touchUpInside)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
@@ -219,7 +201,6 @@ class ViewController: UIViewController{
     func closeMoreView(){
         
         moreView.isHidden = true
-        blackButton_moreView.isHidden = true
         changeButton(toRed: false)
         cvTasks[moreView.tag].note = more_note.text
         
@@ -259,6 +240,11 @@ class ViewController: UIViewController{
     
     func dismissKeyboard(){
         more_note.resignFirstResponder()
+    }
+    
+    func addTags(){
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "AddTagsViewController") as! AddTagsViewController
+        self.navigationController?.pushViewController(next, animated: true)
     }
     
 }

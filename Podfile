@@ -7,5 +7,6 @@ target 'Joyle' do
 
     pod 'JTAppleCalendar', '~> 7.0'
     pod 'SwiftKeychainWrapper'
+    pod 'SQLite.swift', '~> 0.11.4'
 
 end

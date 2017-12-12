@@ -29,7 +29,7 @@ extension ViewController{
         let gap: CGFloat = 5.0
         more_tagsView.frame.origin.y = more_note.frame.origin.y + more_note.frame.size.height + gap
         more_tV.frame.origin.y = more_tagsView.frame.origin.y + more_tagsView.frame.size.height + gap
-        more_scrollView.contentSize.height = more_note.frame.size.height + gap + more_tagsView.frame.size.height + gap + more_tV.frame.size.height + 2*gap
+        more_scrollView.contentSize.height = more_note.frame.size.height + gap + more_tagsView.frame.size.height + gap + more_tV.frame.size.height + 10*gap
         
     }
     
@@ -42,26 +42,6 @@ extension ViewController{
         
     }
     
-    func isFitBetweenTopAndKeyboard(keyboardH: CGFloat) -> Bool{
-        
-        let realH: CGFloat = realHeight()
-        
-        let gap = self.view.frame.size.height - keyboardH - topMargin
-        if (cellH > 0){
-            return (gap > realH)
-        }
-        return (moreView.frame.origin.y > topMargin)
-        
-    }
-    
-    func isFitBetweenYAndKeyboard(keyboardH: CGFloat) -> Bool{
-        
-        let realH: CGFloat = realHeight()
-        let gap = self.view.frame.size.height - keyboardH - moreView.frame.origin.y
-        return (gap > realH)
-        
-    }
-    
     func isFitBetweenTopAndBottom() -> Bool{
         
         let realH: CGFloat = realHeight()
@@ -70,17 +50,9 @@ extension ViewController{
         
     }
     
-    func isFitBetweenYAndBottom() -> Bool{
-        
-        let realH: CGFloat = realHeight()
-        let gap = self.view.frame.size.height - bottomMargin - moreView.frame.origin.y
-        return (gap > realH)
-        
-    }
-    
     func openMoreView(){
         
-        blackButton_moreView.isHidden = false
+        //blackButton_moreView.isHidden = false
         new_updateMoreView()
         
     }
@@ -174,53 +146,52 @@ extension ViewController{
         
     }
     
+    func adaptScrollView(){
+        let gap: CGFloat = 5.0
+        more_scrollView.frame.size.height = moreView.frame.size.height - 2*gap - more_iconsView.frame.size.height
+    }
+    
+    func setCenter(){
+        more_scrollView.frame.size.height = more_scrollView.contentSize.height
+        moveObjectsInsideMoreView()
+        let viewCenterY = (self.view.frame.size.height - bottomMargin - topMargin)/2.0 + topMargin
+        let moreViewCenterY = moreView.frame.size.height/2.0
+        moreView.frame.origin.y = viewCenterY - moreViewCenterY
+    }
+    
+    func setTopKeyboard(){
+        moreView.frame.size.height = self.view.frame.size.height - CGFloat(myKeyboardHeight) + 2.0 - topMargin
+        adaptScrollView()
+        more_iconsView.frame.origin.y = moreView.frame.size.height - more_iconsView.frame.size.height
+        moreView.frame.origin.y = topMargin
+    }
+    
+    func setTopBottom(){
+        moreView.frame.size.height = self.view.frame.size.height - bottomMargin - topMargin
+        adaptScrollView()
+        more_iconsView.frame.origin.y = moreView.frame.size.height - more_iconsView.frame.size.height
+        moreView.frame.origin.y = topMargin
+    }
+    
+    
+    
     func new_updateMoreView(){
     
         moveObjectsInsideScrollView()
         if (isKeyboardOpen){
             
-            if (isFitBetweenYAndKeyboard(keyboardH: CGFloat(myKeyboardHeight))){
-                more_scrollView.frame.size.height = more_scrollView.contentSize.height
-                moveObjectsInsideMoreView()
-                tV_textField.inputAccessoryView?.isHidden = true
-                tV_textField.reloadInputViews()
-            }
-            else if(isFitBetweenTopAndKeyboard(keyboardH: CGFloat(myKeyboardHeight))){
-                let inputView: CGFloat = 44.0
-                let keyboardY = self.view.frame.size.height - CGFloat(myKeyboardHeight) - inputView
-                more_scrollView.frame.size.height = more_scrollView.contentSize.height
-                moveObjectsInsideMoreView()
-                moreView.frame.origin.y = keyboardY - (moreView.frame.size.height - more_iconsView.frame.size.height)
-                tV_textField.inputAccessoryView?.isHidden = false
-                tV_textField.reloadInputViews()
-            }
-            else{
-                let gap: CGFloat = 5.0
-                let inputView: CGFloat = 44.0
-                more_scrollView.frame.size.height = self.view.frame.size.height - CGFloat(myKeyboardHeight) - inputView - gap - topMargin - more_scrollView.frame.origin.y
-                moveObjectsInsideMoreView()
-                moreView.frame.origin.y = topMargin
-                tV_textField.inputAccessoryView?.isHidden = false
-                tV_textField.reloadInputViews()
-            }
+            setTopKeyboard()
+            tV_textField.inputAccessoryView?.isHidden = false
+            tV_textField.reloadInputViews()
             
         }
         else{
             
-            if (isFitBetweenYAndBottom()){
-                more_scrollView.frame.size.height = more_scrollView.contentSize.height
-                moveObjectsInsideMoreView()
-            }
-            else if(isFitBetweenTopAndKeyboard(keyboardH: CGFloat(myKeyboardHeight))){
-                more_scrollView.frame.size.height = more_scrollView.contentSize.height
-                moveObjectsInsideMoreView()
-                moreView.frame.origin.y = self.view.frame.size.height - bottomMargin - moreView.frame.size.height
+            if (isFitBetweenTopAndBottom()){
+                setCenter()
             }
             else{
-                let gap: CGFloat = 5.0
-                more_scrollView.frame.size.height = self.view.frame.size.height - bottomMargin - more_iconsView.frame.size.height - gap - topMargin - more_scrollView.frame.origin.y
-                moveObjectsInsideMoreView()
-                moreView.frame.origin.y = topMargin
+                setTopBottom()
             }
             
         }
