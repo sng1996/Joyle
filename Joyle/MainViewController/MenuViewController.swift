@@ -36,7 +36,6 @@ class MenuViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var panelView: UIView!
     
     //DB
-    var database: Connection!
     //groups
     let groupsTable = Table("groups")
     let id_groups = Expression<String>("id")
@@ -73,7 +72,6 @@ class MenuViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
-        setupDB()
         addButtonTargets()
         setupViews()
         

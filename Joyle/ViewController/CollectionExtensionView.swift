@@ -11,14 +11,8 @@ import UIKit
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //if (collectionView == cV){
         let itemSize = CGSize(width: collectionView.bounds.width - 20, height: 40)
         return itemSize
-        /*}
-         else{
-         let itemSize = CGSize(width: collectionView.bounds.width - 20, height: 28)
-         return itemSize
-         }*/
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -26,17 +20,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //if (collectionView == cV){
         return cvTasks.count
-        /*}
-         else{
-         return checkPoints.count + 2
-         }*/
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //if (collectionView == cV){
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TaskCell
         cell.label.text = cvTasks[indexPath.row].name
         cell.checkButton.frame.origin.x = CGFloat(10 + 10*cvTasks[indexPath.row].level)
@@ -49,26 +37,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         changeArrow(cell: cell, isOpen: cvTasks[indexPath.row].isOpen, isParent: !cvTasks[indexPath.row].subtasks.isEmpty)
         cell.setNeedsLayout()
         return cell
-        //}
-        /*else{
-         if (indexPath.row == 0){
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moreNoteCell", for: indexPath) as! MoreNoteCell
-         cell.textView.placeholder = "Добавить заметку"
-         cell.frame.size.height = cell.textView.frame.size.height
-         return cell
-         }
-         else if (indexPath.row == 1){
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moreAddPointCell", for: indexPath) as! MoreAddPointCell
-         cell.backgroundColor = UIColor(red: 249/255.0, green: 249/255.0, blue: 249/255.0, alpha: 1.0)
-         cell.layer.cornerRadius = 3
-         return cell
-         }
-         else{
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moreCell", for: indexPath) as! MoreCell
-         cell.label.text = checkPoints[indexPath.row-2]
-         return cell
-         }
-         }*/
         
     }
     

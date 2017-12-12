@@ -8,12 +8,16 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import SQLite
+
+var database: Connection!
 
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -25,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         print("Device number:")
         print(strApplicationUUID!)
+        
+        setupDB()
         
         return true
     }
@@ -49,6 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func setupDB(){
+        
+        do{
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent("joyle").appendingPathExtension("sqlite3")
+            database = try Connection(fileUrl.path)
+        }catch{
+            print(error)
+        }
+        
     }
 
 

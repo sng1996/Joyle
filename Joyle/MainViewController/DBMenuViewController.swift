@@ -11,19 +11,6 @@ import SQLite
 
 extension MenuViewController{
     
-    func setupDB(){
-        
-        do{
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileUrl = documentDirectory.appendingPathComponent("joyle").appendingPathExtension("sqlite3")
-            let database = try Connection(fileUrl.path)
-            self.database = database
-        }catch{
-            print(error)
-        }
-        
-    }
-    
     func createTable_groups(){
         
         let createTable = self.groupsTable.create{ (table) in
@@ -32,7 +19,7 @@ extension MenuViewController{
             table.column(self.user_id_groups)
         }
         
-        do{ try self.database.run(createTable)  }catch{print(error)}
+        do{ try database.run(createTable)  }catch{print(error)}
         
     }
     
@@ -40,20 +27,21 @@ extension MenuViewController{
         
         let insertGroup = self.groupsTable.insert(self.id_groups <- _group.id, self.name_groups <- _group.name, self.user_id_groups <- _group.user_id)
         
-        do{ try self.database.run(insertGroup)  }catch{print(error)}
+        do{ try database.run(insertGroup)  }catch{print(error)}
         
     }
     
     func list_groups(){
         groupsArray.removeAll()
         do{
-            let groups = try self.database.prepare(self.groupsTable)
+            let groups = try database.prepare(self.groupsTable)
             for group in groups{
                 let myGroup = Group()
                 myGroup.id = group[self.id_groups]
                 myGroup.name = group[self.name_groups]
                 myGroup.user_id = group[self.user_id_groups]
                 groupsArray.append(myGroup)
+                print(myGroup.id)
             }
         }
         catch{
@@ -66,7 +54,7 @@ extension MenuViewController{
         
         let currentGroup = self.groupsTable.filter(self.id_groups == _group.id)
         let updateGroup = currentGroup.update(self.name_groups <- _group.name)
-        do{ try self.database.run(updateGroup)  } catch{print(error)}
+        do{ try database.run(updateGroup)  } catch{print(error)}
         
     }
     
@@ -74,14 +62,14 @@ extension MenuViewController{
         
         let currentGroup = self.groupsTable.filter(self.id_groups == _group.id)
         let deleteGroup = currentGroup.delete()
-        do{ try self.database.run(deleteGroup)  }catch{print(error)}
+        do{ try database.run(deleteGroup)  }catch{print(error)}
         
     }
     
     func truncateTable_groups(){
         
         let dropTable = self.groupsTable.drop()
-        do{ try self.database.run(dropTable)  }catch{print(error)}
+        do{ try database.run(dropTable)  }catch{print(error)}
         createTable_groups()
         
     }
@@ -94,7 +82,7 @@ extension MenuViewController{
             table.column(self.user_id_tags)
         }
         
-        do{ try self.database.run(createTable)  }catch{print(error)}
+        do{ try database.run(createTable)  }catch{print(error)}
         
     }
     
@@ -102,14 +90,14 @@ extension MenuViewController{
         
         let insertTag = self.tagsTable.insert(self.id_tags <- _tag.id, self.name_tags <- _tag.name, self.user_id_tags <- _tag.user_id)
         
-        do{ try self.database.run(insertTag)  }catch{print(error)}
+        do{ try database.run(insertTag)  }catch{print(error)}
         
     }
     
     func list_tags(){
         tagsArray.removeAll()
         do{
-            let tags = try self.database.prepare(self.tagsTable)
+            let tags = try database.prepare(self.tagsTable)
             for tag in tags{
                 let myTag = Tag()
                 myTag.id = tag[self.id_tags]
@@ -128,7 +116,7 @@ extension MenuViewController{
         
         let currentTag = self.tagsTable.filter(self.id_tags == _tag.id)
         let updateTag = currentTag.update(self.name_tags <- _tag.name)
-        do{ try self.database.run(updateTag)  } catch{print(error)}
+        do{ try database.run(updateTag)  } catch{print(error)}
         
     }
     
@@ -136,14 +124,14 @@ extension MenuViewController{
         
         let currentTag = self.tagsTable.filter(self.id_tags == _tag.id)
         let deleteTag = currentTag.delete()
-        do{ try self.database.run(deleteTag)  }catch{print(error)}
+        do{ try database.run(deleteTag)  }catch{print(error)}
         
     }
     
     func truncateTable_tags(){
         
         let dropTable = self.tagsTable.drop()
-        do{ try self.database.run(dropTable)  }catch{print(error)}
+        do{ try database.run(dropTable)  }catch{print(error)}
         createTable_tags()
         
     }

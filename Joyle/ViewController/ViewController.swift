@@ -9,6 +9,7 @@
 
 import UIKit
 import JTAppleCalendar
+import SQLite
 
 extension UIButton
 {
@@ -28,6 +29,27 @@ class ViewController: UIViewController{
         UIColor(red: 88/255.0, green: 224/255.0, blue: 155/255.0, alpha: 1.0),
         UIColor(red: 54/255.0, green: 205/255.0, blue: 128/255.0, alpha: 1.0)
     ]
+    
+    //DB
+    //tasks
+    let tasksTable = Table("tasks")
+    let id_tasks = Expression<String>("id")
+    let name_tasks = Expression<String>("name")
+    let description_tasks = Expression<String>("description")
+    let date_tasks = Expression<String>("date")
+    let creator_id_tasks = Expression<String>("creator_id")
+    
+    //task_items
+    let task_itemsTable = Table("task_items")
+    let id_task_items = Expression<String>("id")
+    let task_id_task_items = Expression<String>("task_id")
+    let group_id_task_items = Expression<String>("group_id")
+    let parent_id_task_items = Expression<String>("parent_id")
+    let is_open_task_items = Expression<Bool>("is_open")
+    let priority_task_items = Expression<Int>("priority")
+    let delegated_to_user_id_task_items = Expression<String>("delegated_to_user_id")
+    let delegated_from_user_id_task_items = Expression<String>("delegated_from_user_id")
+    let position_task_items = Expression<Int>("position")
     
     @IBOutlet var cV: UICollectionView!
     @IBOutlet var ok: UIBarButtonItem!
@@ -80,8 +102,6 @@ class ViewController: UIViewController{
     
     var cvTasks: [Task] = []
     var finishedTasks: [Task] = []
-    var group: Group!
-    var groupsArray: [String] = []
     var tmpTask: Task!
     var isCopyTime: Bool = false
     var isSetDate: Bool = false
@@ -91,6 +111,9 @@ class ViewController: UIViewController{
     var formatter = DateFormatter()
     var checkPoints: [String] = []
     var tags: [String] = ["Мой", "Дядя", "Самых честных", "Правил"]
+    var allTasks: [Task] = []
+    var groups: [Group] = []
+    var groupIndex: Int!
     
     
 
@@ -99,14 +122,14 @@ class ViewController: UIViewController{
         
         self.navigationController?.navigationBar.isHidden = true
         
-        groupsArray = [
+        /*groupsArray = [
             "Инбокс",
             "Добавить группу",
             "Маркетинг Joyle",
             "Мобильная разработка альбомного сервиса",
             "Баку",
             "Владивосток"
-        ]
+        ]*/
         
         /*cvTasks = [
             Task(name: "Список горячих клавиш для веб версии"),
@@ -122,6 +145,8 @@ class ViewController: UIViewController{
             Task(name: "Вынести мусор"),
             Task(name: "Позвонить Олегу")
         ]*/
+        
+        print(groups[groupIndex].id)
         
         setupRectView()
         setupBorderSublayer()
@@ -160,7 +185,14 @@ class ViewController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        cV.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        createTable_tasks()
+        createTable_task_items()
+        updateData_tasks()
+        getTaskItems_API()
+        getTasks_API()
     }
 
     

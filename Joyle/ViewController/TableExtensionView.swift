@@ -16,7 +16,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         }
         else{
             let label = UILabel()
-            label.text = groupsArray[indexPath.row]
+            label.text = groups[indexPath.row].name
             label.font = UIFont(name: "MuseoSansCyrl-300", size: 16)
             return checkLabelFrame(label: label) + 20
         }
@@ -36,7 +36,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             return checkPoints.count + 1
         }
         else{
-            return groupsArray.count
+            return groups.count
         }
     }
     
@@ -71,7 +71,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             default: cell.icon.image = UIImage(named: "folder-icon")
                 break
             }
-            cell.label.text = groupsArray[indexPath.row]
+            cell.label.text = groups[indexPath.row].name
             updateLabelFrame(label: cell.label)
             cell.selectionStyle = .none
             

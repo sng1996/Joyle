@@ -287,4 +287,15 @@ extension ViewController{
         cV.reloadData()
     }
     
+    func updateData_tasks(){
+        
+        list_task_items()
+        cvTasks.removeAll()
+        for _task in groups[groupIndex].tasks{
+            cvTasks.append(_task)
+        }
+        cV.reloadData()
+        
+    }
+    
 }

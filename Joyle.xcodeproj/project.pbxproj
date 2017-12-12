@@ -90,6 +90,8 @@
 		2AE4FDF11FDC23ED00CB3DE7 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE4FDEF1FDC23ED00CB3DE7 /* TagCell.xib */; };
 		2AE4FDF41FDC263400CB3DE7 /* AddTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4FDF31FDC263400CB3DE7 /* AddTagsViewController.swift */; };
 		2AE4FDF61FDC264B00CB3DE7 /* AddTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4FDF51FDC264B00CB3DE7 /* AddTagsView.swift */; };
+		2AE941041FDFEF8F00F24ABE /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE941031FDFEF8F00F24ABE /* DBViewController.swift */; };
+		2AE941061FE03AAC00F24ABE /* ApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE941051FE03AAC00F24ABE /* ApiViewController.swift */; };
 		2AF6FD471FC60AF400429E52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AA598D21F5FEE1E00D9B16A /* Info.plist */; };
 		2AF6FD4B1FC6232C00429E52 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF6FD4A1FC6232C00429E52 /* CalendarView.swift */; };
 		2AF6FD4D1FC6E44F00429E52 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF6FD4C1FC6E44F00429E52 /* CalendarView.xib */; };
@@ -205,6 +207,8 @@
 		2AE4FDEF1FDC23ED00CB3DE7 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
 		2AE4FDF31FDC263400CB3DE7 /* AddTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsViewController.swift; sourceTree = "<group>"; };
 		2AE4FDF51FDC264B00CB3DE7 /* AddTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsView.swift; sourceTree = "<group>"; };
+		2AE941031FDFEF8F00F24ABE /* DBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBViewController.swift; sourceTree = "<group>"; };
+		2AE941051FE03AAC00F24ABE /* ApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiViewController.swift; sourceTree = "<group>"; };
 		2AF6FD4A1FC6232C00429E52 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		2AF6FD4C1FC6E44F00429E52 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		2AF6FD501FC6EE0200429E52 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 				2AF6FD4A1FC6232C00429E52 /* CalendarView.swift */,
 				2AC7DEC31FCA744E00448A70 /* MoreView.swift */,
 				2ACAA9C71FDD5E1B0084D2F2 /* ShareView.swift */,
+				2AE941031FDFEF8F00F24ABE /* DBViewController.swift */,
+				2AE941051FE03AAC00F24ABE /* ApiViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				2AE4FDF01FDC23ED00CB3DE7 /* TagCell.swift in Sources */,
 				2A4BAAEC1FD92DE6002705FF /* GroupsCell.swift in Sources */,
 				2AA75F121FDF3C19009E43CC /* DBMenuViewController.swift in Sources */,
+				2AE941041FDFEF8F00F24ABE /* DBViewController.swift in Sources */,
 				2AA598C91F5FEE1E00D9B16A /* ViewController.swift in Sources */,
 				2A7D22941FD7247C00B075A0 /* Group.swift in Sources */,
 				2A7F4D941FD8012D008D82DC /* NewGroupCell.swift in Sources */,
@@ -709,6 +716,7 @@
 				2AC7DEC41FCA744E00448A70 /* MoreView.swift in Sources */,
 				2AE4FDF41FDC263400CB3DE7 /* AddTagsViewController.swift in Sources */,
 				2AA598F51F5FEF6B00D9B16A /* TaskCell.swift in Sources */,
+				2AE941061FE03AAC00F24ABE /* ApiViewController.swift in Sources */,
 				2A1D88841FD30A9C00B2C19D /* TableExtensionView.swift in Sources */,
 				2A12E5701FC9F2600004A9B9 /* AddNotificationView.swift in Sources */,
 				2ACAA9C81FDD5E1B0084D2F2 /* ShareView.swift in Sources */,

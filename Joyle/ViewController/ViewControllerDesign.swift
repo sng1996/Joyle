@@ -12,6 +12,7 @@ extension ViewController{
     
     func setupRectView(){
         topView.layer.cornerRadius = 3
+        topLabel.text = groups[groupIndex].name
         rectView.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
         rectView.backgroundColor = .white
         rectView.isHidden = true

@@ -90,6 +90,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let next = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        next.groupIndex = indexPath.row
+        next.groups = groupsArray
         self.navigationController?.pushViewController(next, animated: true)
         
     }
